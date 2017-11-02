@@ -1,0 +1,80 @@
+@import "common/settings/variables";
+@import "common/utils";
+@import 'system-font';
+
+html {
+  overflow: auto;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.7rem;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif, system-ui;
+  overflow: hidden;
+  line-height: 1.54;
+  background-color: $white;
+  color: $text;
+}
+
+input, optgroup, select, textarea{
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif, system-ui;
+  color: $text;
+  font-weight: 100;
+}
+
+button{
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif, system-ui;
+  color: $text;
+}
+
+
+body > div {
+  //overflow: hidden;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.65em;
+
+  &.p_center { text-align: center; }
+  //+ p { margin-top: 2.5em; }
+  >  a { color: $interactive; }
+}
+span.bold{
+    font-weight: 500;
+}
+
+.email{
+  color: $interactive;
+}
+// Общий случай модификаторов для скрытия-показа
+// конкретные реализации (например, display:flex) — в контексте
+
+.mobile-show {
+  display: none;
+  @include media($mobile) { display: block; }
+}
+.mobile-hide {
+  @include media($mobile) { display: none; }
+}
+
+
+//::-webkit-scrollbar {
+//  width: 0px;  /* remove scrollbar space */
+//  background: transparent;  /* optional: just make scrollbar invisible */
+//}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}

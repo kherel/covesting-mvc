@@ -1,0 +1,12 @@
+@import 'common/settings/variables';
+@import 'common/utils';
+
+.main-layout {
+  @include media($tablet) {
+    &:before {
+      display: block;
+      content: '';
+      height: 7rem;
+    }
+  }
+}
