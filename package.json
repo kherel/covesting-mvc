@@ -8,10 +8,10 @@
     "node": "6.11.0"
   },
   "scripts": {
-    "build": "SET NODE_ENV=production && node ./initializers/webpack/build.js",
+    "build": "NODE_ENV=production node ./initializers/webpack/build.js",
     "start": "NODE_ENV=production node ./initializers/server/index.js",
-    "dev": "SET NODE_ENV=development && nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
-    "dev2": "SET NODE_ENV=development && SET NO_SSR=true && nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
+    "dev": "NODE_ENV=development nodemon --watch initializers --watch webpack.config.js ./initializers/server/index.js",
+    "dev2": "NODE_ENV=development NO_SSR=true && nodemon --watch ./initializers --watch webpack.config.js ./initializers/server/index.js",
     "tests": "jest --config jest.config.json",
     "rebuild": "npm install && npm run build"
   },
