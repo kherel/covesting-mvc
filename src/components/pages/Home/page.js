@@ -3,7 +3,7 @@ import './styles.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('Home')
 
-const scrollToComponent = __CLIENT__ ? require('react-scroll-to-component') : () => {}
+// const scrollToComponent = __CLIENT__ ? require('react-scroll-to-component') : () => {}
 
 class Home extends Component {
   render() {
