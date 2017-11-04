@@ -1,0 +1,29 @@
+@import "common/settings/variables";
+@import "common/utils";
+
+.a-h {
+  margin: 0;
+
+  &_type {
+    $type: &;
+
+    &_page {
+      font-size: 22px;
+      line-height: 27px;
+      font-weight: 600;
+      color: $page-title;
+    }
+
+    &_section {
+      font-size: 20px;
+      line-height: 24px;
+      color: $section-title;
+    }
+
+    &_user {
+      font-size: 19px;
+      line-height: 23px;
+      color: $section-title;
+    }
+  }
+}
