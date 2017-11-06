@@ -1,6 +1,15 @@
 const path = require('path')
+const SvgStore = require('webpack-svgstore-plugin')
 
 module.exports = {
+  plugins: [
+    new SvgStore({
+      svgoOptions: {
+        plugins: [{ removeTitle: true }],
+      },
+      prefix: 'icon-',
+    }),
+  ],
   module: {
     rules: [
       {

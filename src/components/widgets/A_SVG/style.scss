@@ -1,0 +1,16 @@
+.a-svg {
+  $root: &;
+  &_type {
+    &_star {
+     &#{$root}_active_true {
+        fill: $star-active;
+      }
+      fill: $star-empty;
+      width: 17px;
+      height: 16px;
+    }
+
+
+  }
+
+}

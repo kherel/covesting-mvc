@@ -1,10 +1,12 @@
 import React from 'react'
 import 'scss/style.scss'
+import '../src/assets/svgSprite/svgInsert'
 
 import { storiesOf, addDecorator } from '@storybook/react'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import A_TH from 'A_TH'
+import A_SVG from 'A_SVG'
 
 const styleDecorator = storyFn => (
   <div
@@ -46,3 +48,12 @@ storiesOf('A_TH', module)
   .add('Table header small', () => <A_TH type="small">Total weight</A_TH>)
   .add('Table header normal', () => <A_TH type="normal">Total weight</A_TH>)
   .add('Table header dark', () => <A_TH type="dark">Total weight</A_TH>)
+
+storiesOf('A_SVG', module).add('Stars', () => (
+  <div>
+    <p>Empty star</p>
+    <A_SVG type="star">Total weight</A_SVG>
+    <p>Active star</p>
+    <A_SVG type="star" active>Total weight</A_SVG>
+  </div>
+))
