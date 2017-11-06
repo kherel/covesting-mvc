@@ -44,6 +44,15 @@ export default {
                 includePaths: path.resolve(process.cwd(), './src'),
               },
             },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  path.resolve(root, './src/scss/_variables.scss'),
+                  path.resolve(root, './src/scss/_utils.scss'),
+                ],
+              },
+            },
           ],
         }),
       },
@@ -61,7 +70,7 @@ export default {
           ],
         }),
       },
-      // { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'}
+      { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'},
       {
         test: /\.(png|jpg|svg)$/,
         use: [

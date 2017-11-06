@@ -64,6 +64,15 @@ export default {
               includePaths: path.resolve(process.cwd(), './src'),
             },
           },
+          {
+            loader: "sass-resources-loader",
+            options: {
+              resources: [
+                path.resolve(__dirname, "./src/scss/_variables.scss"),
+                path.resolve(__dirname, "./src/scss/_utils.scss"),
+              ],
+            },
+          },
         ],
       },
       {
