@@ -9,6 +9,8 @@ import A_P from 'A_P'
 import A_Th from 'A_Th'
 import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
+import A_Card from 'A_Card'
+import M_Chart from 'M_Chart'
 
 const styleDecorator = storyFn => (
   <div
@@ -62,30 +64,41 @@ storiesOf('A_Svg', module).add('Stars', () => (
   </div>
 ))
 
-storiesOf('A_Button', module)
-  .add('Buttons', () => (
-    <div>
-      <p>Primary button</p>
-      <A_Button onClick={action('clicked')} type="button-primary" btnType="submit">
-        Follow
-      </A_Button>
-      <p>Secondary button (disabled)</p>
-      <A_Button onClick={action('clicked')} disabled type="button-secondary" btnType="reset">
-        Messages
-      </A_Button>
-      <p>Menu button</p>
-      <div style={{ width: '298px', padding: '20px', backgroundColor: '#0084c9' }}>
-        <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
-          Support
-        </A_Button>
-      </div>
-    </div>
-  ))
-  .add('Buttons-links', () => (
-    <div>
-      <p>External button-link</p>
-      <A_Button onClick={action('clicked')} type="link-primary" external btnType="submit">
-        Follow
+storiesOf('A_Button', module).add('Buttons', () => (
+  <div>
+    <p>Primary button</p>
+    <A_Button onClick={action('clicked')} type="button-primary" btnType="submit">
+      Follow
+    </A_Button>
+    <p>Secondary button (disabled)</p>
+    <A_Button onClick={action('clicked')} disabled type="button-secondary" btnType="reset">
+      Messages
+    </A_Button>
+    <p>Menu button</p>
+    <div style={{ width: '298px', padding: '20px', backgroundColor: '#0084c9' }}>
+      <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
+        Support
       </A_Button>
     </div>
-  ))
+  </div>
+))
+
+storiesOf('A_Card', module).add('Card', () => (
+  <A_Card style={{ width: '300px', padding: '10px' }}>Hello, world!</A_Card>
+))
+
+storiesOf('M_Chart', module).add('Chart', () => (
+  <M_Chart
+    data={[
+      { x: 0, y: 3000 },
+      { x: 10, y: 4050 },
+      { x: 20, y: 2800 },
+      { x: 30, y: 4800 },
+      { x: 40, y: 3700 },
+    ]}
+    width={1200}
+    height={600}
+    yMax={6000}
+    xMax={40}
+  />
+))
