@@ -13,9 +13,9 @@ $menu-link-active: #0acac7;
 
 $popup-hover-background: #f6f6f6;
 
-$section-background: #ffffff;
-$section-title: rgba(0, 0, 0, 0.72);
-$section-subtitle: $basic-text;
+$card-background: #ffffff;
+$card-title: rgba(0, 0, 0, 0.72);
+$card-subtitle: $basic-text;
 
 $table-background: #fbfbfb;
 $table-heading-1: $basic-text;
@@ -44,6 +44,8 @@ $chart-bar-1: #fdc758;
 $chart-bar-2: #57d532;
 $chart-bar-3: #0187d2;
 $chart-bar-4: #d0021b;
+$chart-gradient-1: rgba(24, 231, 229, 0.61);
+$chart-gradient-2: rgba(11, 224, 221, 0.21);
 
 $feed-name: #37394c;
 $feed-status: #6da3c7;
@@ -55,7 +57,6 @@ $button-color: #ffffff;
 
 
 // ***GRADIENTS***
-$chart-gradient: linear-gradient(to bottom, rgba(24, 231, 229, 0.61), rgba(11, 224, 221, 0.21));
 $bar-gradient-1: linear-gradient(to right, #ffe591, $chart-bar-1);
 $bar-gradient-2: linear-gradient(to right, #90ec61, $chart-bar-2);
 $bar-gradient-3: linear-gradient(to right, #02bceb, $chart-bar-3);

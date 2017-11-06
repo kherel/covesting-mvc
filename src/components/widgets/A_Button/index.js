@@ -43,7 +43,7 @@ const A_Btn = ({
 
     case 'button-primary':
     case 'button-secondary':
-    case 'button-interface':
+    case 'button-menu':
     default:
       return (
         <button
