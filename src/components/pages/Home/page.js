@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('Home')
-import A_SVG from 'A_SVG'
+import A_SVG from '../../widgets/A_Svg'
 
 // const scrollToComponent = __CLIENT__ ? require('react-scroll-to-component') : () => {}
 

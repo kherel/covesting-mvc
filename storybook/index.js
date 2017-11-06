@@ -3,10 +3,12 @@ import 'scss/style.scss'
 import '../src/assets/svgSprite/svgInsert'
 
 import { storiesOf, addDecorator } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import A_H from 'A_H'
 import A_P from 'A_P'
-import A_TH from 'A_TH'
-import A_SVG from 'A_SVG'
+import A_Th from 'A_Th'
+import A_Svg from 'A_Svg'
+import A_Button from 'A_Button'
 
 const styleDecorator = storyFn => (
   <div
@@ -44,16 +46,46 @@ storiesOf('A_P', module)
   ))
   .add('Section subtitle', () => <A_P type="subtitle">Small Bites...</A_P>)
 
-storiesOf('A_TH', module)
-  .add('Table header small', () => <A_TH type="small">Total weight</A_TH>)
-  .add('Table header normal', () => <A_TH type="normal">Total weight</A_TH>)
-  .add('Table header dark', () => <A_TH type="dark">Total weight</A_TH>)
+storiesOf('A_Th', module)
+  .add('Table header small', () => <A_Th type="small">Total weight</A_Th>)
+  .add('Table header normal', () => <A_Th type="normal">Total weight</A_Th>)
+  .add('Table header dark', () => <A_Th type="dark">Total weight</A_Th>)
 
-storiesOf('A_SVG', module).add('Stars', () => (
+storiesOf('A_Svg', module).add('Stars', () => (
   <div>
     <p>Empty star</p>
-    <A_SVG type="star">Total weight</A_SVG>
+    <A_Svg type="star">Total weight</A_Svg>
     <p>Active star</p>
-    <A_SVG type="star" active>Total weight</A_SVG>
+    <A_Svg type="star" active>
+      Total weight
+    </A_Svg>
   </div>
 ))
+
+storiesOf('A_Button', module)
+  .add('Buttons', () => (
+    <div>
+      <p>Primary button</p>
+      <A_Button onClick={action('clicked')} type="button-primary" btnType="submit">
+        Follow
+      </A_Button>
+      <p>Secondary button (disabled)</p>
+      <A_Button onClick={action('clicked')} disabled type="button-secondary" btnType="reset">
+        Messages
+      </A_Button>
+      <p>Menu button</p>
+      <div style={{ width: '298px', padding: '20px', backgroundColor: '#0084c9' }}>
+        <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
+          Support
+        </A_Button>
+      </div>
+    </div>
+  ))
+  .add('Buttons-links', () => (
+    <div>
+      <p>External button-link</p>
+      <A_Button onClick={action('clicked')} type="link-primary" external btnType="submit">
+        Follow
+      </A_Button>
+    </div>
+  ))
