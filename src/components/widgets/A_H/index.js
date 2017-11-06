@@ -37,5 +37,4 @@ A_H.propTypes = {
   mx: T.string,
 }
 
-A_H.defaultProps = {}
 export default A_H
