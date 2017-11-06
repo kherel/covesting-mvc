@@ -1,8 +1,9 @@
 import React from 'react'
-import 'common/style.scss'
+import 'scss/style.scss'
 
 import { storiesOf, addDecorator } from '@storybook/react'
 import A_H from 'A_H'
+import A_P from 'A_P'
 
 const styleDecorator = storyFn => (
   <div
@@ -18,9 +19,17 @@ const styleDecorator = storyFn => (
   </div>
 )
 
-addDecorator(styleDecorator);
+addDecorator(styleDecorator)
 
 storiesOf('A_H', module)
-  .add('Page title', () => <A_H type="page">Dashboard</A_H>)
+  .add('Page title', () => <A_H type="page">Trader profile</A_H>)
   .add('Section title', () => <A_H type="section">Dashboard</A_H>)
-  .add('User section title', () => <A_H type="user">Dashboard</A_H>)
+  .add('User section title', () => <A_H type="user">Luke Shaw</A_H>)
+
+storiesOf('A_P', module).add('Section subtitle', () => (
+  <A_P type="subtitle">
+    Small Bites. I have a style that takes small bites of the Forex markets movements to achieve a
+    monthly gain that is safe from heavy loss. I first analyze for the big trend and only trade with
+    it.
+  </A_P>
+))
