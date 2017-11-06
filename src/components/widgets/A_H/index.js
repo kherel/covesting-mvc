@@ -1,6 +1,6 @@
 import React from 'react'
 import * as T from 'prop-types'
-import './styles.scss'
+import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_H')
 
@@ -20,11 +20,7 @@ const A_H = ({ type, children, center, mx }) => {
 
   center = center && 'center'
 
-  return React.createElement(
-    tagType,
-    { className: cn({ type }, [center, mx]) },
-    children
-  )
+  return React.createElement(tagType, { className: cn({ type }, [center, mx]) }, children)
 }
 
 A_H.propTypes = {

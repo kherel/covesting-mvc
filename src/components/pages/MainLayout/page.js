@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import * as T from "prop-types";
-import './styles.scss'
+import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('MainLayout')
 
