@@ -20,8 +20,8 @@ const styleDecorator = storyFn => (
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      overflow: 'visible',
-      paddingBottom: '50px'
+
+      paddingBottom: '50px',
     }}
   >
     {storyFn()}
@@ -89,19 +89,39 @@ storiesOf('A_Card', module).add('Card', () => (
   <A_Card style={{ width: '300px', padding: '10px' }}>Hello, world!</A_Card>
 ))
 
-storiesOf('M_Chart', module).add('Chart', () => (
-  <M_Chart
-    data={[
-      { x: '2017-01-14', y: 3000 },
-      { x: '2017-01-15', y: 4050 },
-      { x: '2017-01-16', y: 2800 },
-      { x: '2017-01-17', y: 4800 },
-      { x: '2017-01-18', y: 3700 },
-    ]}
-    width={737}
-    height={193}
-    yMax={6000}
-    axisYMargin={27}
-    axisXMargin={25}
-  />
-))
+storiesOf('M_Chart', module)
+  .add('Big chart', () => (
+    <M_Chart
+      data={[
+        { x: '2017-01-14', y: 3000 },
+        { x: '2017-01-15', y: 4050 },
+        { x: '2017-01-16', y: 2800 },
+        { x: '2017-01-17', y: 4800 },
+        { x: '2017-01-18', y: 3700 },
+      ]}
+      width={737}
+      height={193}
+      yMax={6000}
+      axisYMargin={27}
+      axisXMargin={25}
+      grid={true}
+    />
+  ))
+  .add('Small chart', () => (
+    <M_Chart
+      data={[
+        { x: '2017-01-14', y: 3000 },
+        { x: '2017-01-15', y: 4050 },
+        { x: '2017-01-16', y: 2800 },
+        { x: '2017-01-17', y: 4800 },
+        { x: '2017-01-18', y: 3700 },
+      ]}
+      width={112}
+      height={44}
+      yMax={4800}
+      grid={false}
+      type="small"
+      xAxis={false}
+      yAxis={false}
+    />
+  ))

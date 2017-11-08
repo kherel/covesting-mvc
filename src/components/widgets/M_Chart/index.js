@@ -20,6 +20,17 @@ class M_Chart extends Component {
     yMax: T.number,
     axisXMargin: T.number,
     axisYMargin: T.number,
+    grid: T.bool,
+    xAxis: T.bool,
+    yAxis: T.bool,
+    type: T.string,
+  }
+
+  static defaultProps = {
+    grid: true,
+    xAxis: true,
+    yAxis: true,
+    type: 'normal',
   }
 
   gradientId = 'chart-gradient'
@@ -49,7 +60,19 @@ class M_Chart extends Component {
     }))
 
   render() {
-    const { width, height, data, mx, yMax, axisYMargin, axisXMargin } = this.props
+    const {
+      width,
+      height,
+      data,
+      mx,
+      yMax,
+      axisYMargin,
+      axisXMargin,
+      grid,
+      xAxis,
+      yAxis,
+      type,
+    } = this.props
 
     return (
       <svg className={cn([mx])} height={height} width={width}>
@@ -60,24 +83,28 @@ class M_Chart extends Component {
           </linearGradient>
         </defs>
 
-        <M_AxisY data={this.getAxisYData(yMax)} margin={axisYMargin} />
-        <M_AxisX data={this.getAxisXData(data)} margin={axisXMargin} height={height} />
+        {xAxis && <M_AxisX data={this.getAxisXData(data)} margin={axisXMargin} height={height} />}
+        {yAxis && <M_AxisY data={this.getAxisYData(yMax)} margin={axisYMargin} />}
 
-        <M_ChartGrid
-          xRange={this.getRangeX(data)}
-          yRange={this.getRangeY(yMax, 1000)}
-          left={false}
-        />
+        {grid && (
+          <M_ChartGrid
+            xRange={this.getRangeX(data)}
+            yRange={this.getRangeY(yMax, 1000)}
+            left={false}
+          />
+        )}
+
         <A_ChartArea
           data={this.getDataPoints(data)}
           height={height}
           curve={curveCardinal.tension(0.8)}
           gradientId={this.gradientId}
         />
+
         <A_ChartLine
           data={this.getDataPoints(data)}
           curve={curveCardinal.tension(0.8)}
-          type="normal"
+          type={type}
         />
       </svg>
     )
