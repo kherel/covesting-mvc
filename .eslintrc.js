@@ -45,7 +45,7 @@ module.exports = {
     'no-unused-vars': [1, { varsIgnorePattern: 'PropTypes|styles' }],
     'no-unused-expressions': 0,
     'no-case-declarations': 0,
-    'react/prop-types': 0,
+    'react/prop-types': 1,
     'no-irregular-whitespace': 0,
     'no-debugger': 0,
     'no-console': 0,
