@@ -1,0 +1,9 @@
+.a-svg-text {
+  &_type {
+    &_main {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      fill: $basic-text;
+    }
+  }
+}
