@@ -8,6 +8,8 @@ import A_ChartArea from 'A_ChartArea'
 import M_ChartGrid from 'M_ChartGrid'
 const cn = cssClassName('M_Chart')
 import range from 'lodash/range'
+import M_AxisY from 'M_AxisY'
+import M_AxisX from 'M_AxisX'
 
 class M_Chart extends Component {
   static propTypes = {
@@ -15,50 +17,65 @@ class M_Chart extends Component {
     width: T.number,
     height: T.number,
     mx: T.string,
+    yMax: T.number,
+    axisXMargin: T.number,
+    axisYMargin: T.number,
   }
 
-  scaleX = x => {
-    const { width, xMax } = this.props
-    return x * width / xMax
-  }
+  gradientId = 'chart-gradient'
 
-  scaleY = y => {
-    const { height, yMax } = this.props
-    return height - y * height / yMax
-  }
+  scaleX = x => x * this.props.width / (this.props.data.length - 1)
+  scaleY = y => this.props.height - y * this.props.height / this.props.yMax
 
-  getChartPoints = data =>
-    data.map(({ x, y }) => ({
-      x: this.scaleX(x),
+  getDataPoints = data =>
+    data.map(({ y }, i) => ({
+      x: this.scaleX(i),
       y: this.scaleY(y),
     }))
 
+  getRangeX = data => data.map((x, i) => this.scaleX(i))
+  getRangeY = (yMax, step) => range(0, yMax, step).map(y => this.scaleY(y))
+
+  getAxisXData = data =>
+    data.map(({ x }, i) => ({
+      value: x,
+      x: this.scaleX(i),
+    }))
+
+  getAxisYData = yMax =>
+    range(0, yMax + 1000, 1000).map(value => ({
+      y: this.scaleY(value),
+      value,
+    }))
+
   render() {
-    const { width, height, data, mx, yMax } = this.props
-
-    const xRange = data.map(({ x }) => this.scaleX(x))
-    const yRange = range(0, yMax, 1000).map(y => this.scaleY(y))
-
-    const gradientId = 'chart-gradient'
+    const { width, height, data, mx, yMax, axisYMargin, axisXMargin } = this.props
 
     return (
       <svg className={cn([mx])} height={height} width={width}>
         <defs>
-          <linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id={gradientId}>
+          <linearGradient x1="0%" x2="0%" y1="0%" y2="100%" id={this.gradientId}>
             <stop className={cn('stop-top')} offset="0%" />
             <stop className={cn('stop-bottom')} offset="100%" />
           </linearGradient>
         </defs>
 
-        <M_ChartGrid xRange={xRange} yRange={yRange} />
+        <M_AxisY data={this.getAxisYData(yMax)} margin={axisYMargin} />
+        <M_AxisX data={this.getAxisXData(data)} margin={axisXMargin} height={height} />
+
+        <M_ChartGrid
+          xRange={this.getRangeX(data)}
+          yRange={this.getRangeY(yMax, 1000)}
+          left={false}
+        />
         <A_ChartArea
-          data={this.getChartPoints(data)}
+          data={this.getDataPoints(data)}
           height={height}
           curve={curveCardinal.tension(0.8)}
-          gradientId={gradientId}
+          gradientId={this.gradientId}
         />
         <A_ChartLine
-          data={this.getChartPoints(data)}
+          data={this.getDataPoints(data)}
           curve={curveCardinal.tension(0.8)}
           type="normal"
         />

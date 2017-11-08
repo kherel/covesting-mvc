@@ -25,11 +25,17 @@ const A_ChartArea = ({ data, height, curve, type, gradientId }) => {
 }
 
 A_ChartArea.propTypes = {
-  data: T.array,
+  data: T.arrayOf(
+    T.shape({
+      x: T.number,
+      y: T.number,
+    })
+  ),
+  height: T.number,
   curve: T.func,
   type: T.oneOf([
-    'normal',
-    'small',
+    'normal', //*** 2px stroke-width
+    'small', //*** 1px stroke-width
   ]),
   gradientId: T.string,
 }

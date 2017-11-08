@@ -1,12 +1,21 @@
 .m-chart {
   background-color: #fff;
 
+  //To override normalize`s IE fix
+  &:not(:root) {
+    overflow: visible;
+  }
+
   &__stop-top {
     stop-color: $chart-gradient-1;
   }
 
   &__stop-bottom {
     stop-color: $chart-gradient-2;
+  }
+
+  &__text {
+    font-size: 1.2rem;
   }
 }
 

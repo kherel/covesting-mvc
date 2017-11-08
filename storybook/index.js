@@ -20,6 +20,8 @@ const styleDecorator = storyFn => (
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      overflow: 'visible',
+      paddingBottom: '50px'
     }}
   >
     {storyFn()}
@@ -90,15 +92,16 @@ storiesOf('A_Card', module).add('Card', () => (
 storiesOf('M_Chart', module).add('Chart', () => (
   <M_Chart
     data={[
-      { x: 0, y: 3000 },
-      { x: 10, y: 4050 },
-      { x: 20, y: 2800 },
-      { x: 30, y: 4800 },
-      { x: 40, y: 3700 },
+      { x: '2017-01-14', y: 3000 },
+      { x: '2017-01-15', y: 4050 },
+      { x: '2017-01-16', y: 2800 },
+      { x: '2017-01-17', y: 4800 },
+      { x: '2017-01-18', y: 3700 },
     ]}
-    width={1200}
-    height={600}
+    width={737}
+    height={193}
     yMax={6000}
-    xMax={40}
+    axisYMargin={27}
+    axisXMargin={25}
   />
 ))
