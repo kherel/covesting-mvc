@@ -1,0 +1,18 @@
+.a-linear-gradient {
+
+  &__first {
+    &_type {
+      &_area-gradient {
+        stop-color: $chart-gradient-1;
+      }
+    }
+  }
+
+  &__second {
+    &_type {
+      &_area-gradient {
+        stop-color: $chart-gradient-2;
+      }
+    }
+  }
+}

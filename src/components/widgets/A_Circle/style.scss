@@ -1,0 +1,9 @@
+.a-circle {
+  &_type {
+    &_chart-hover {
+      stroke-width: 0.2rem;
+      stroke: $chart-line;
+      fill: #fff;
+    }
+  }
+}

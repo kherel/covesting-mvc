@@ -3,12 +3,13 @@ import T from 'prop-types'
 
 import A_ChartLine from 'A_ChartLine'
 
-const M_ChartGrid = ({ xRange, yRange, left, right, top, bottom }) => {
-  const yMax = Math.max(...yRange)
-  const xMax = Math.max(...xRange)
+const M_ChartGrid = ({ rangeX, rangeY, left, right, top, bottom }) => {
+  const yMax = Math.max(...rangeY)
+  const xMax = Math.max(...rangeX)
 
-  const slicedXRange = xRange.slice(left ? 0 : 1, right ? xRange.length : xRange.length - 1)
-  const slicedYRange = yRange.slice(top ? 0 : 1, bottom ? yRange.length : yRange.length - 1)
+  //Filter borders
+  const slicedXRange = rangeX.slice(left ? 0 : 1, right ? rangeX.length : rangeX.length - 1)
+  const slicedYRange = rangeY.slice(top ? 0 : 1, bottom ? rangeY.length : rangeY.length - 1)
 
   return (
     <g>
@@ -23,8 +24,8 @@ const M_ChartGrid = ({ xRange, yRange, left, right, top, bottom }) => {
 }
 
 M_ChartGrid.propTypes = {
-  xRange: T.array.isRequired,
-  yRange: T.array.isRequired,
+  rangeX: T.array.isRequired,
+  rangeY: T.array.isRequired,
   left: T.bool,
   right: T.bool,
   top: T.bool,

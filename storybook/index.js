@@ -13,6 +13,7 @@ import A_Card from 'A_Card'
 import M_Chart from 'M_Chart'
 import A_MenuIcon from 'A_MenuIcon'
 import A_Image from 'A_Image'
+import M_SimpleChart from '../src/components/widgets/M_SimpleChart/index'
 
 const styleDecorator = storyFn => (
   <div
@@ -22,7 +23,6 @@ const styleDecorator = storyFn => (
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-
       paddingBottom: '50px',
     }}
   >
@@ -31,7 +31,9 @@ const styleDecorator = storyFn => (
 )
 
 const whiteBackgroundDecorator = storyFn => (
-  <div style={{ margin: 0, width: 260, padding: '22px', backgroundColor: '#fff' }}>{storyFn()}</div>
+  <div style={{ margin: 0, width: '100%', padding: '50px', backgroundColor: '#fff' }}>
+    {storyFn()}
+  </div>
 )
 
 const blueBackgroundDecorator = storyFn => (
@@ -127,42 +129,20 @@ storiesOf('A_Card', module).add('Card', () => (
   <A_Card style={{ width: '300px', padding: '10px' }}>Hello, world!</A_Card>
 ))
 
+const chartData = [
+  { x: '2017-01-14', y: 80 },
+  { x: '2017-01-15', y: 60 },
+  { x: '2017-01-16', y: 90 },
+  { x: '2017-01-17', y: 30 },
+  { x: '2017-01-18', y: 40 },
+]
+
 storiesOf('M_Chart', module)
+  .addDecorator(whiteBackgroundDecorator)
   .add('Big chart', () => (
-    <M_Chart
-      data={[
-        { x: '2017-01-14', y: 3000 },
-        { x: '2017-01-15', y: 4050 },
-        { x: '2017-01-16', y: 2800 },
-        { x: '2017-01-17', y: 4800 },
-        { x: '2017-01-18', y: 3700 },
-      ]}
-      width={737}
-      height={193}
-      yMax={6000}
-      axisYMargin={27}
-      axisXMargin={25}
-      grid={true}
-    />
+    <M_Chart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
   ))
-  .add('Small chart', () => (
-    <M_Chart
-      data={[
-        { x: '2017-01-14', y: 3000 },
-        { x: '2017-01-15', y: 4050 },
-        { x: '2017-01-16', y: 2800 },
-        { x: '2017-01-17', y: 4800 },
-        { x: '2017-01-18', y: 3700 },
-      ]}
-      width={112}
-      height={44}
-      yMax={4800}
-      grid={false}
-      type="small"
-      xAxis={false}
-      yAxis={false}
-    />
-  ))
+  .add('Small chart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
 
 storiesOf('A_Image', module).add('Rounded image', () => (
   <A_Image
