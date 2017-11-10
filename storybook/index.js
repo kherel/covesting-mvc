@@ -11,6 +11,8 @@ import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
 import A_Card from 'A_Card'
 import M_Chart from 'M_Chart'
+import A_MenuIcon from 'A_MenuIcon'
+import A_Image from 'A_Image'
 
 const styleDecorator = storyFn => (
   <div
@@ -28,6 +30,23 @@ const styleDecorator = storyFn => (
   </div>
 )
 
+const whiteBackgroundDecorator = storyFn => (
+  <div style={{ margin: 0, width: 260, padding: '22px', backgroundColor: '#fff' }}>{storyFn()}</div>
+)
+
+const blueBackgroundDecorator = storyFn => (
+  <div
+    style={{
+      margin: 0,
+      width: 260,
+      padding: '20px',
+      backgroundColor: '#0084c9',
+    }}
+  >
+    {storyFn()}
+  </div>
+)
+
 addDecorator(styleDecorator)
 
 storiesOf('A_H', module)
@@ -36,11 +55,7 @@ storiesOf('A_H', module)
   .add('User section title', () => <A_H type="user">Luke Shaw</A_H>)
 
 storiesOf('A_P', module)
-  .addDecorator(storyFN => (
-    <div style={{ margin: 0, width: 260, padding: '22px', backgroundColor: '#fff' }}>
-      {storyFN()}
-    </div>
-  ))
+  .addDecorator(whiteBackgroundDecorator)
   .add('Description paragraph', () => (
     <A_P type="description">
       Small Bites. I have a style that takes small bites of the Forex markets movements to achieve a
@@ -55,35 +70,58 @@ storiesOf('A_Th', module)
   .add('Table header normal', () => <A_Th type="normal">Total weight</A_Th>)
   .add('Table header dark', () => <A_Th type="dark">Total weight</A_Th>)
 
-storiesOf('A_Svg', module).add('Stars', () => (
-  <div>
-    <p>Empty star</p>
-    <A_Svg type="star">Total weight</A_Svg>
-    <p>Active star</p>
-    <A_Svg type="star" active>
-      Total weight
-    </A_Svg>
-  </div>
-))
+storiesOf('A_Svg', module)
+  .add('Stars', () => (
+    <div>
+      <p>Empty star</p>
+      <A_Svg type="star" />
+      <p>Active star</p>
+      <A_Svg type="star" active />
+    </div>
+  ))
+  .add('Logo', () => (
+    <div>
+      <p>Blue logo</p>
+      <A_Svg type="logo-blue" />
+      <p>White logo</p>
+      <A_Svg type="logo-white" />
+    </div>
+  ))
 
-storiesOf('A_Button', module).add('Buttons', () => (
-  <div>
-    <p>Primary button</p>
-    <A_Button onClick={action('clicked')} type="button-primary" btnType="submit">
-      Follow
-    </A_Button>
-    <p>Secondary button (disabled)</p>
-    <A_Button onClick={action('clicked')} disabled type="button-secondary" btnType="reset">
-      Messages
-    </A_Button>
-    <p>Menu button</p>
-    <div style={{ width: '298px', padding: '20px', backgroundColor: '#0084c9' }}>
-      <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
-        Support
+storiesOf('A_MenuIcon', module)
+  .addDecorator(blueBackgroundDecorator)
+  .add('Menu icons', () => (
+    <div>
+      <A_MenuIcon type="dashboard" active />
+      <A_MenuIcon type="find-fund" />
+      <A_MenuIcon type="find-trader" />
+      <A_MenuIcon type="community" />
+      <A_MenuIcon type="messages" />
+      <A_MenuIcon type="reports" />
+      <A_MenuIcon type="wallet" />
+      <A_MenuIcon type="settings" />
+    </div>
+  ))
+
+storiesOf('A_Button', module)
+  .add('Buttons', () => (
+    <div>
+      <p>Primary button</p>
+      <A_Button onClick={action('clicked')} type="button-primary" btnType="submit">
+        Follow
+      </A_Button>
+      <p>Secondary button (disabled)</p>
+      <A_Button onClick={action('clicked')} disabled type="button-secondary" btnType="reset">
+        Messages
       </A_Button>
     </div>
-  </div>
-))
+  ))
+  .addDecorator(blueBackgroundDecorator)
+  .add('Menu button', () => (
+    <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
+      Support
+    </A_Button>
+  ))
 
 storiesOf('A_Card', module).add('Card', () => (
   <A_Card style={{ width: '300px', padding: '10px' }}>Hello, world!</A_Card>
@@ -125,3 +163,13 @@ storiesOf('M_Chart', module)
       yAxis={false}
     />
   ))
+
+storiesOf('A_Image', module).add('Rounded image', () => (
+  <A_Image
+    src={require('../static/img/userpics/userpic1.png')}
+    width={47}
+    height={47}
+    alt="userpic"
+    rounded
+  />
+))
