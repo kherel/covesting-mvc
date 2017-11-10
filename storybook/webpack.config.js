@@ -13,9 +13,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(woff|woff2|eot|ttf|svg)$/,
-        exclude: /node_modules/,
-        loader: 'url-loader',
+        test: /\.(woff|woff2|eot|ttf|png|jpg|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 500000,
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,
