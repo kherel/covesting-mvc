@@ -11,10 +11,10 @@ import M_OutlinedPlot from 'src/components/widgets/M_OutlinedPlot'
 import withScaledData from 'withScaledData'
 import A_Circle from 'A_Circle'
 
-const cn = cssClassName('M_Chart')
+const cn = cssClassName('M_BigChart')
 
 @withScaledData()
-class M_Chart extends Component {
+class M_BigChart extends Component {
   static propTypes = {
     //From HOC
     scaledData: T.array,
@@ -71,4 +71,4 @@ class M_Chart extends Component {
   }
 }
 
-export default M_Chart
+export default M_BigChart

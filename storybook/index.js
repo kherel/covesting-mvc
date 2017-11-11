@@ -10,10 +10,10 @@ import A_Th from 'A_Th'
 import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
 import A_Card from 'A_Card'
-import M_Chart from 'M_Chart'
+import M_BigChart from 'M_BigChart'
 import A_MenuIcon from 'A_MenuIcon'
 import A_Image from 'A_Image'
-import M_SimpleChart from '../src/components/widgets/M_SimpleChart/index'
+import M_SimpleChart from 'M_SimpleChart'
 
 const styleDecorator = storyFn => (
   <div
@@ -140,7 +140,7 @@ const chartData = [
 storiesOf('M_Chart', module)
   .addDecorator(whiteBackgroundDecorator)
   .add('Big chart', () => (
-    <M_Chart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
+    <M_BigChart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
   ))
   .add('Small chart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
 
