@@ -5,5 +5,11 @@
       line-height: 1.5rem;
       fill: $basic-text;
     }
+
+    &_bar-chart {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+      fill: $bar-chart-text;
+    }
   }
 }

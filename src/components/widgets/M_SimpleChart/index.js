@@ -8,7 +8,7 @@ import withScaledData from 'withScaledData'
 const M_SimpleChart = ({ height, width, scaledData }) => (
   <svg height={height} width={width}>
     <defs>
-      <A_LinearGradient type={areaGradient} />
+      <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={areaGradient} />
     </defs>
     <M_OutlinedPlot data={scaledData} type="small" height={height} gradient={areaGradient} />
   </svg>

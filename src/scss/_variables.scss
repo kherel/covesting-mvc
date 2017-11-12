@@ -40,10 +40,9 @@ $chart-line: #0084c9;
 $chart-popup-background: #0084c9;
 $chart-popup-text: #ffffff;
 $chart-popup-text-positive: #00ee36;
-$chart-bar-1: #fdc758;
-$chart-bar-2: #57d532;
-$chart-bar-3: #0187d2;
-$chart-bar-4: #d0021b;
+$bar-chart-text: #ffffff;
+$bar-colors-list-from: #ffe591 #90ec61 #02bceb #c86dd7;
+$bar-colors-list-to: #fdc758 #57d532 #0187d2 #d0021b;
 $chart-gradient-1: rgba(24, 231, 229, 0.61);
 $chart-gradient-2: rgba(11, 224, 221, 0.21);
 
@@ -55,12 +54,6 @@ $button-background: #0acac7;
 $button-background-active: #0db3b0;
 $button-color: #ffffff;
 
-
-// ***GRADIENTS***
-$bar-gradient-1: linear-gradient(to right, #ffe591, $chart-bar-1);
-$bar-gradient-2: linear-gradient(to right, #90ec61, $chart-bar-2);
-$bar-gradient-3: linear-gradient(to right, #02bceb, $chart-bar-3);
-$bar-gradient-4: linear-gradient(to right, $chart-bar-4, #c86dd7);
 
 //_________________________
 

@@ -14,6 +14,7 @@ import M_BigChart from 'M_BigChart'
 import A_MenuIcon from 'A_MenuIcon'
 import A_Image from 'A_Image'
 import M_SimpleChart from 'M_SimpleChart'
+import M_BarChart from 'M_BarChart'
 
 const styleDecorator = storyFn => (
   <div
@@ -137,12 +138,15 @@ const chartData = [
   { x: '2017-01-18', y: 40 },
 ]
 
+const barChartData = [40, 25, 20, 15]
+
 storiesOf('M_Chart', module)
   .addDecorator(whiteBackgroundDecorator)
   .add('Big chart', () => (
     <M_BigChart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
   ))
   .add('Small chart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
+  .add('Bar chart', () => <M_BarChart data={barChartData} width={400} height={158} />)
 
 storiesOf('A_Image', module).add('Rounded image', () => (
   <A_Image

@@ -31,17 +31,14 @@ A_ChartArea.propTypes = {
       y: T.number,
     })
   ),
-  height: T.number,
+  height: T.number, //distance from top of SVG file to the bottom line of element
   curve: T.func,
   type: T.oneOf([
     'normal',
     'small',
+    'bar',
   ]),
   gradient: T.string,
-}
-
-A_ChartArea.defaultProps = {
-  curve: () => {},
 }
 
 export default A_ChartArea

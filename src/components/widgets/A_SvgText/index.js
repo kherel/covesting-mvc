@@ -13,6 +13,7 @@ const A_SvgText = ({ children, type, x, y, textAnchor, alignmentBaseline }) => (
 A_SvgText.propTypes = {
   type: T.oneOf([
     'main', //*** 12/15 gray
+    'bar-chart', //*** 13/16 white
   ]),
   x: T.number.isRequired,
   y: T.number.isRequired,
