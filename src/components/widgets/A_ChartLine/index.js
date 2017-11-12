@@ -24,11 +24,8 @@ A_ChartLine.propTypes = {
     'normal', //2px solid blue
     'small', //1px solid blue
     'grid', //0.5px solid gray
+    'border', //2px solid gray
   ]),
-}
-
-A_ChartLine.defaultProps = {
-  curve: null,
 }
 
 export default A_ChartLine

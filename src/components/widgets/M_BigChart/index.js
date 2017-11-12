@@ -18,8 +18,6 @@ class M_BigChart extends Component {
   static propTypes = {
     //From HOC
     scaledData: T.array,
-    scaleX: T.func,
-    scaleY: T.func,
     axisXData: T.array,
     axisYData: T.array,
     rangeX: T.array,
@@ -58,7 +56,7 @@ class M_BigChart extends Component {
     return (
       <svg ref={setRef} onMouseMove={onMouseMove} className={cn([mx])} {...{ height, width }}>
         <defs>
-          <A_LinearGradient type={areaGradient} />
+          <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={areaGradient} />
         </defs>
         <M_AxisX data={axisXData} margin={axisXMargin} height={height} />
         <M_AxisY data={axisYData} margin={axisYMargin} />
