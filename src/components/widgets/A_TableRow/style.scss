@@ -1,0 +1,15 @@
+.a-table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.9rem 0 0.9rem;
+
+  &_type {
+    &_border-clear {
+      border-top: 1px solid $table-border-clear;
+      &:last-of-type {
+        border-bottom: 1px solid $table-border-clear;
+      }
+    }
+  }
+}

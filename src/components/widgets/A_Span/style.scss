@@ -20,7 +20,12 @@
       height: 2.6rem;
       color: $menu-link;
       background-color: $button-background;
+    }
 
+    &_table-big {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      color: $table-text-black;
     }
   }
 }

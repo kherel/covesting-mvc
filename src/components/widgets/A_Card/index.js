@@ -11,6 +11,7 @@ const A_Card = ({ children, type, mx, ...props }) => (
 A_Card.propTypes = {
   type: T.oneOf([
     'normal',
+
   ]),
   mx: T.string,
   children: T.node.isRequired,

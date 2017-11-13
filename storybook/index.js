@@ -9,12 +9,13 @@ import A_P from 'A_P'
 import A_Th from 'A_Th'
 import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
-import A_Card from 'A_Card'
 import M_BigChart from 'M_BigChart'
 import A_Image from 'A_Image'
 import M_SimpleChart from 'M_SimpleChart'
 import M_BarChart from 'M_BarChart'
 import M_NavItem from 'M_MenuItem'
+import A_ColoredValue from '../src/components/widgets/A_ColoredValue/index'
+import M_ProfitTable from '../src/components/widgets/M_ProfitTable/index'
 
 const styleDecorator = storyFn => (
   <div
@@ -72,6 +73,15 @@ storiesOf('A_Th', module)
   .add('Table header normal', () => <A_Th type="normal">Total weight</A_Th>)
   .add('Table header dark', () => <A_Th type="dark">Total weight</A_Th>)
 
+storiesOf('A_ColoredValue', module).add('Colored Value', () => (
+  <div>
+    <A_ColoredValue value={10} percent />
+    <A_ColoredValue value={-20} percent />
+    <A_ColoredValue value={40} />
+    <A_ColoredValue value={-155} />
+  </div>
+))
+
 storiesOf('A_Svg', module)
   .add('Stars', () => (
     <div>
@@ -121,9 +131,7 @@ storiesOf('A_Button', module)
     </A_Button>
   ))
 
-storiesOf('A_Card', module).add('Card', () => (
-  <A_Card style={{ width: '300px', padding: '10px' }}>Hello, world!</A_Card>
-))
+storiesOf('A_ProfitTable', module).add('ProfitTable', () => <M_ProfitTable />)
 
 const chartData = [
   { x: '2017-01-14', y: 80 },

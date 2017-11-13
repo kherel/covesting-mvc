@@ -12,6 +12,8 @@ A_Th.propTypes = {
     'normal', //*** 16/20 table-heading-2
     'dark', //*** 16/20 table-heading-3
   ]),
+  mx: T.string,
+  children: T.any,
 }
 
 export default A_Th
