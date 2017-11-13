@@ -4,7 +4,7 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_H')
 
-const A_H = ({ type, children, center, mx }) => {
+const A_H = ({ type, children, center, mix }) => {
   let tagType
   switch (type) {
     case 'page':
@@ -20,7 +20,7 @@ const A_H = ({ type, children, center, mx }) => {
 
   center = center && 'center'
 
-  return React.createElement(tagType, { className: cn({ type }, [center, mx]) }, children)
+  return React.createElement(tagType, { className: cn({ type }, [center, mix]) }, children)
 }
 
 A_H.propTypes = {
@@ -30,7 +30,8 @@ A_H.propTypes = {
     'user', // black Regular 19px
   ]),
   children: T.any.isRequired,
-  mx: T.string,
+  mix: T.string,
+  center: T.bool,
 }
 
 export default A_H

@@ -27,5 +27,26 @@
       line-height: 1.8rem;
       color: $table-text-black;
     }
+
+    &_feed-name {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.5px;
+      color: $feed-name;
+    }
+
+    &_feed-message {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.4px;
+      color: $feed-message;
+    }
+
+    &_feed-time {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.4px;
+      color: $feed-time;
+    }
   }
 }

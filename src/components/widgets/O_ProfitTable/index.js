@@ -6,13 +6,14 @@ import A_TableRow from 'A_TableRow'
 import A_Card from 'A_Card'
 import A_H from 'A_H'
 import M_TableEntry from 'M_TableEntry'
-const cn = cssClassName('M_ProfitTable')
+const cn = cssClassName('O_ProfitTable')
 
-const M_ProfitTable = ({ mx }) => (
-  <A_Card mx={cn([mx])}>
-    <A_H type="section" mx={cn('title')}>
+const O_ProfitTable = ({ mix }) => (
+  <A_Card mix={cn([mix])}>
+    <A_H type="section" mix={cn('title')}>
       Total profit:
     </A_H>
+
 
     <A_TableRow type="border-clear">
       <M_TableEntry name="Day" value={9} />
@@ -28,9 +29,9 @@ const M_ProfitTable = ({ mx }) => (
   </A_Card>
 )
 
-M_ProfitTable.propTypes = {
-  mx: T.string,
+O_ProfitTable.propTypes = {
+  mix: T.string,
   children: T.any,
 }
 
-export default M_ProfitTable
+export default O_ProfitTable

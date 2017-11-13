@@ -4,13 +4,14 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_TableRow')
 
-const A_TableRow = ({ type, children, mx }) => <div className={cn({ type }, [mx])}>{children}</div>
+const A_TableRow = ({ type, children, mix }) => <div className={cn({ type }, [mix])}>{children}</div>
 
 A_TableRow.propTypes = {
   type: T.oneOf([
     'border-clear', //*** top and bottom borders for each row
+    'feed', //*** rgba(6, 81, 120, 0.5);
   ]),
-  mx: T.string,
+  mix: T.string,
   children: T.any,
 }
 

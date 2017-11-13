@@ -9,13 +9,13 @@ import A_P from 'A_P'
 import A_Th from 'A_Th'
 import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
-import M_BigChart from 'M_BigChart'
 import A_Image from 'A_Image'
+import A_ColoredValue from 'A_ColoredValue'
 import M_SimpleChart from 'M_SimpleChart'
-import M_BarChart from 'M_BarChart'
 import M_NavItem from 'M_MenuItem'
-import A_ColoredValue from '../src/components/widgets/A_ColoredValue/index'
-import M_ProfitTable from '../src/components/widgets/M_ProfitTable/index'
+import O_BarChart from 'O_BarChart'
+import O_BigChart from 'O_BigChart'
+import O_ProfitTable from 'O_ProfitTable'
 
 const styleDecorator = storyFn => (
   <div
@@ -131,7 +131,7 @@ storiesOf('A_Button', module)
     </A_Button>
   ))
 
-storiesOf('A_ProfitTable', module).add('ProfitTable', () => <M_ProfitTable />)
+storiesOf('O_ProfitTable', module).add('ProfitTable', () => <O_ProfitTable />)
 
 const chartData = [
   { x: '2017-01-14', y: 80 },
@@ -143,13 +143,13 @@ const chartData = [
 
 const barChartData = [40, 25, 20, 15]
 
-storiesOf('M_Chart', module)
+storiesOf('Charts', module)
   .addDecorator(whiteBackgroundDecorator)
-  .add('Big chart', () => (
-    <M_BigChart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
+  .add('O_BigChart', () => (
+    <O_BigChart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
   ))
-  .add('Small chart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
-  .add('Bar chart', () => <M_BarChart data={barChartData} width={400} height={158} />)
+  .add('M_SimpleChart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
+  .add('O_BarChart', () => <O_BarChart data={barChartData} width={400} height={158} />)
 
 storiesOf('A_Image', module).add('Rounded image', () => (
   <A_Image

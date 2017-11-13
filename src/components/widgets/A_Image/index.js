@@ -4,10 +4,10 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_Image')
 
-const A_Image = ({ type, mx, rounded, realSize, objectFit, ...props }) => (
+const A_Image = ({ type, mix, rounded, realSize, objectFit, ...props }) => (
   <span className={cn('root')}>
     <img
-      className={cn('img', { type, objectFit, onClick: !!props.onClick }, [rounded, realSize, mx])}
+      className={cn('img', { type, objectFit, onClick: !!props.onClick }, [rounded, realSize, mix])}
       {...props}
     />
   </span>
@@ -26,7 +26,7 @@ A_Image.propTypes = {
   type: T.oneOf([]),
   realSize: T.bool, // width and height auto
   rounded: T.bool, // rounded Images.
-  mx: T.string,
+  mix: T.string,
 }
 
 export default A_Image

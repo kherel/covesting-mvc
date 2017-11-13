@@ -7,9 +7,9 @@ const cn = cssClassName('M_NavItem')
 import { Link } from 'react-router'
 import A_Span from 'A_Span'
 
-const M_NavItem = ({ type, active, mx, to, title, ...props }) => (
-  <Link to={to} className={cn({ active }, [mx])} {...props}>
-    <A_MenuIcon mx={cn('icon')} type={type} active={active} />
+const M_NavItem = ({ type, active, mix, to, title, ...props }) => (
+  <Link to={to} className={cn({ active }, [mix])} {...props}>
+    <A_MenuIcon mix={cn('icon')} type={type} active={active} />
     <A_Span type="menu-item" active={active}>
       {title}
     </A_Span>
@@ -19,7 +19,7 @@ const M_NavItem = ({ type, active, mx, to, title, ...props }) => (
 M_NavItem.propTypes = {
   type: T.string.isRequired,
   active: T.bool,
-  mx: T.string,
+  mix: T.string,
   to: T.string.isRequired,
   title: T.string.isRequired,
 }

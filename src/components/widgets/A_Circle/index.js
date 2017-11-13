@@ -4,13 +4,13 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_Circle')
 
-const A_Circle = ({ cx, cy, r, type, mx, ...props }) => (
-  <circle {...{ cx, cy, r }} className={cn({ type }, [mx])} {...props} />
+const A_Circle = ({ cx, cy, r, type, mix, ...props }) => (
+  <circle {...{ cx, cy, r }} className={cn({ type }, [mix])} {...props} />
 )
 
 A_Circle.propTypes = {
   type: T.oneOf(['chart-hover']),
-  mx: T.string,
+  mix: T.string,
   cx: T.number.isRequired,
   cy: T.number.isRequired,
   r: T.number.isRequired,
