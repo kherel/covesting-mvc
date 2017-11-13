@@ -1,6 +1,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+import SvgStore from 'webpack-svgstore-plugin'
 
 process.noDeprecation = true
 // const sourcePath = path.join(__dirname, './src')
@@ -14,6 +15,12 @@ export default {
       __DEVELOPMENT__: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new SvgStore({
+      svgoOptions: {
+        plugins: [{ removeTitle: true }],
+      },
+      prefix: "icon-",
+    }),
   ],
   devtool: 'cheap-module-eval-source-map',
   entry: [
@@ -62,6 +69,15 @@ export default {
             loader: 'sass-loader',
             options: {
               includePaths: path.resolve(process.cwd(), './src'),
+            },
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: [
+                path.resolve(__dirname, './src/scss/_variables.scss'),
+                path.resolve(__dirname, './src/scss/_utils.scss'),
+              ],
             },
           },
         ],

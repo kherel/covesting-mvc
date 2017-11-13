@@ -3,8 +3,10 @@ import { render } from 'react-dom'
 import 'babel-polyfill'
 import { AppContainer } from 'react-hot-loader'
 import App from './App'
+import 'assets/svgSprite/svgInsert'
 const rootEl = document.getElementById('container')
 const loader = document.getElementById('loader')
+
 
 render(
   <AppContainer>

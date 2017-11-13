@@ -1,7 +1,3 @@
-@import "common/settings/variables";
-@import "common/utils";
-@import 'system-font';
-
 html {
   overflow: auto;
 
@@ -13,19 +9,19 @@ body {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif, system-ui;
   overflow: hidden;
   line-height: 1.54;
-  background-color: $white;
-  color: $text;
+  background-color: $page-background;
+
 }
 
 input, optgroup, select, textarea{
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif, system-ui;
-  color: $text;
+  color: #707174;
   font-weight: 100;
 }
 
 button{
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif, system-ui;
-  color: $text;
+  color: #ffffff;
 }
 
 
@@ -48,16 +44,11 @@ p {
   line-height: 1.65em;
 
   &.p_center { text-align: center; }
-  //+ p { margin-top: 2.5em; }
-  >  a { color: $interactive; }
 }
 span.bold{
     font-weight: 500;
 }
 
-.email{
-  color: $interactive;
-}
 // Общий случай модификаторов для скрытия-показа
 // конкретные реализации (например, display:flex) — в контексте
 
@@ -67,6 +58,10 @@ span.bold{
 }
 .mobile-hide {
   @include media($mobile) { display: none; }
+}
+
+.center {
+  text-align: center;
 }
 
 

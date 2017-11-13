@@ -1,5 +1,3 @@
-@import './settings/variables';
-
 @function top-shadow($depth) {
   $primary-offset: nth(1.5 3 10 14 19, $depth) * 1px;
   $blur: nth(1.5 3 10 14 19, $depth) * 4px;
@@ -64,7 +62,6 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-bottom: $line;
   }
 }
 

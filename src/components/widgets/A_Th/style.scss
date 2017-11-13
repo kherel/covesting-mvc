@@ -1,0 +1,21 @@
+.a-th {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+
+  &_type {
+    &_small {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: $table-heading-1;
+    }
+
+    &_normal {
+      color: $table-heading-2;
+    }
+
+    &_dark {
+      color: $table-heading-3;
+    }
+  }
+}

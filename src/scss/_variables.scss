@@ -1,0 +1,107 @@
+// ***COLORS***
+
+$basic-text: #7f8fa4;
+
+$page-background: #f2f5f8;
+$page-header-background: #ffffff;
+$page-title: #828282;
+
+$menu-background: #0084c9;
+$menu-background-active: #0574ae;
+$menu-link: #ffffff;
+$menu-link-active: #0acac7;
+
+$popup-hover-background: #f6f6f6;
+
+$card-background: #ffffff;
+$card-title: rgba(0, 0, 0, 0.72);
+$card-subtitle: $basic-text;
+
+$table-background: #fbfbfb;
+$table-heading-1: $basic-text;
+$table-heading-2: #9fa9ba;
+$table-heading-3: #707174;
+$table-text-1: #4d4d4d;
+$table-text-2: $basic-text;
+$table-text-positive-1: #76be87;
+$table-text-positive-2: #61d37b;
+$table-text-negative: #d0021b;
+$table-line: #979797;
+$table-arrows: #cccfd4;
+
+$star-active: #f8e71c;
+$star-empty: #e8e8e8;
+
+$link: #0084c9;
+
+$chart-header-background: #e6eaee;
+$chart-caption: $basic-text;
+$chart-line: #0084c9;
+$chart-popup-background: #0084c9;
+$chart-popup-text: #ffffff;
+$chart-popup-text-positive: #00ee36;
+$chart-bar-1: #fdc758;
+$chart-bar-2: #57d532;
+$chart-bar-3: #0187d2;
+$chart-bar-4: #d0021b;
+$chart-gradient-1: rgba(24, 231, 229, 0.61);
+$chart-gradient-2: rgba(11, 224, 221, 0.21);
+
+$feed-name: #37394c;
+$feed-status: #6da3c7;
+$feed-time: #b2c0cb;
+
+$button-background: #0acac7;
+$button-background-active: #0db3b0;
+$button-color: #ffffff;
+
+
+// ***GRADIENTS***
+$bar-gradient-1: linear-gradient(to right, #ffe591, $chart-bar-1);
+$bar-gradient-2: linear-gradient(to right, #90ec61, $chart-bar-2);
+$bar-gradient-3: linear-gradient(to right, #02bceb, $chart-bar-3);
+$bar-gradient-4: linear-gradient(to right, $chart-bar-4, #c86dd7);
+
+//_________________________
+
+$card-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.03);
+$popup-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+
+//_________________________
+
+$card-border-radius: 4px;
+$button-border-radius: 4px;
+
+
+
+
+
+
+// DIMENSIONS
+
+$w-desktop: 1040px;
+$w-desktop-wide: 1120px;
+$w-tablet: 768px;
+
+$small-mobile: 280px;
+
+
+
+
+$identation: 2rem;
+$header-height: 12.2rem;
+$control-height: 4rem;
+
+$p-mobile: 1.6rem;
+$p-tablet: 2rem;
+$p-desktop: 2rem;
+
+// MEDIA QUERIES
+
+$desktop: "min-width: #{$w-desktop}";
+$desktop-wide: "min-width: #{$w-desktop-wide}";
+$tablet: "max-width: #{$w-desktop - 1px}";
+$mobile: "max-width: #{$w-tablet - 1px}";
+$sm-mobile: "max-width: #{$small-mobile - 1px}";
+
+$mobile-up: "min-width: #{$w-tablet}";

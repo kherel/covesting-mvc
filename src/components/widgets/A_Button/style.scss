@@ -1,0 +1,78 @@
+.a-btn {
+  & + & {
+  }
+
+  $this: &;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  border-radius: $button-border-radius;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  transition: all 0.3s ease;
+
+  &__filled {
+    color: $button-color;
+    background-color: $button-background;
+    padding: 0.7rem 1rem 0.6rem;
+
+    &:hover {
+      background-color: darken($button-background, 10%);
+    }
+    &:active {
+      background-color: lighten($button-background, 5%);
+    }
+  }
+  &__transparent {
+    color: $basic-text;
+    background-color: #ffffff;
+    border: solid 2px $button-background;
+    padding: 0.5rem 1rem 0.4rem;
+
+    &:hover {
+    }
+    &:active {
+    }
+  }
+  &.disabled {
+    pointer-events: none;
+  }
+
+  &__button {
+    @extend #{$this};
+
+    &_type {
+      &_button-primary {
+        @extend #{$this}__filled;
+      }
+      &_button-secondary {
+        @extend #{$this}__transparent;
+      }
+      &_button-menu {
+        $color: $button-color;
+        background-color: transparent;
+        border: 2px solid $button-color;
+        font-size: 1.6rem;
+        line-height: 2.0rem;
+        padding: 1.2rem 1.0rem 1.1rem;
+        width: 17.4rem;
+      }
+    }
+  }
+
+  &__link {
+    @extend #{$this};
+
+    &_type {
+      &_link-primary {
+        @extend #{$this}__filled;
+      }
+
+      &_link-secondary {
+        @extend #{$this}__transparent;
+      }
+    }
+  }
+}

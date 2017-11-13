@@ -5,6 +5,7 @@ import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
+import SvgStore from 'webpack-svgstore-plugin'
 const autoprefixer = require('autoprefixer')
 const sourcePath = path.join(__dirname, './src')
 
@@ -44,6 +45,15 @@ export default {
                 includePaths: path.resolve(process.cwd(), './src'),
               },
             },
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  path.resolve(root, './src/scss/_variables.scss'),
+                  path.resolve(root, './src/scss/_utils.scss'),
+                ],
+              },
+            },
           ],
         }),
       },
@@ -61,7 +71,7 @@ export default {
           ],
         }),
       },
-      // { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'}
+      { test: /\.(eot|png|ttf|svg|woff|woff2)$/, loader: 'url-loader'},
       {
         test: /\.(png|jpg|svg)$/,
         use: [
@@ -109,6 +119,16 @@ export default {
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: 'source-map',
     }),
+    new SvgStore({
+      svgoOptions: {
+        plugins: [
+          {removeTitle: true},
+          {convertPathData: false},
+          {removeUselessStrokeAndFill: true}
+        ]
+      },
+      prefix: "icon-"
+    })
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
     // })
