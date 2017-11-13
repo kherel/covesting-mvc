@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 import A_LinearGradient from 'A_LinearGradient'
-import { barChartGradients } from 'constants/svgConstants'
+import { barChartGradients } from 'src/constants/svgConstants'
 import A_ChartArea from 'A_ChartArea'
 import { cssClassName } from 'src/utils/index'
 import './style.scss'

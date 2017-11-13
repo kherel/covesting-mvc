@@ -1,4 +1,4 @@
-import { START, SUCCESS, FAIL, FETCH } from 'store/constants'
+import { START, SUCCESS, FAIL, FETCH } from 'constants'
 
 export default function (entity) {
   return [

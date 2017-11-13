@@ -5,10 +5,10 @@ import { cssClassName } from 'utils'
 import M_ChartGrid from 'M_ChartGrid'
 import M_AxisY from 'M_AxisY'
 import M_AxisX from 'M_AxisX'
-import { areaGradient } from 'constants/svgConstants'
+import { AREA_GRADIENT } from 'src/constants/svgConstants'
 import A_LinearGradient from 'A_LinearGradient'
 import M_OutlinedPlot from 'src/components/widgets/M_OutlinedPlot'
-import withScaledData from 'withScaledData'
+import withScaledData from 'src/HOC/withScaledData'
 import A_Circle from 'A_Circle'
 
 const cn = cssClassName('M_BigChart')
@@ -56,12 +56,12 @@ class M_BigChart extends Component {
     return (
       <svg ref={setRef} onMouseMove={onMouseMove} className={cn([mx])} {...{ height, width }}>
         <defs>
-          <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={areaGradient} />
+          <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={AREA_GRADIENT} />
         </defs>
         <M_AxisX data={axisXData} margin={axisXMargin} height={height} />
         <M_AxisY data={axisYData} margin={axisYMargin} />
         <M_ChartGrid {...{ rangeX, rangeY }} left={false} />
-        <M_OutlinedPlot data={scaledData} height={height} gradient={areaGradient} />
+        <M_OutlinedPlot data={scaledData} height={height} gradient={AREA_GRADIENT} />
 
         <A_Circle cx={posX} cy={posY} r={5} />
       </svg>

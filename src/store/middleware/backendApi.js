@@ -1,4 +1,4 @@
-import { ERROR } from 'store/constants'
+import { ERROR } from 'constants'
 import request from 'superagent'
 import { stringify } from 'qs'
 
