@@ -1,0 +1,54 @@
+.a-menu-icon {
+  fill: $menu-link;
+  &.active {
+    fill: $menu-link-active;
+
+  }
+
+  &_type {
+    &_dashboard {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    &_find-fund {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &_find-trader {
+      width: 1.5rem;
+      height: 1.7rem;
+    }
+
+    &_community {
+      width: 2.3rem;
+      height: 1.6rem;
+    }
+
+    &_messages {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+
+    &_reports {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+
+    &_wallet {
+      width: 1.9rem;
+      height: 1.7rem;
+    }
+
+    &_settings {
+      width: 1.8rem;
+      height: 1.8rem;
+      stroke: $menu-link;
+      &.active {
+        stroke: $menu-link-active;
+      }
+    }
+  }
+}
+

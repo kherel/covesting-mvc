@@ -5,7 +5,7 @@ import { cssClassName } from 'utils'
 const cn = cssClassName('A_ChartArea')
 import { area } from 'd3-shape'
 
-const A_ChartArea = ({ data, height, curve, type, gradientId }) => {
+const A_ChartArea = ({ data, height, curve, type, gradient }) => {
   let newArea = area()
     .x(({ x }) => x)
     .y0(height)
@@ -19,23 +19,26 @@ const A_ChartArea = ({ data, height, curve, type, gradientId }) => {
     <path
       d={newArea(data)}
       className={cn({ type })}
-      style={gradientId && { fill: `url(#${gradientId})` }}
+      style={gradient && { fill: `url(#${gradient})` }}
     />
   )
 }
 
 A_ChartArea.propTypes = {
-  data: T.array,
+  data: T.arrayOf(
+    T.shape({
+      x: T.number,
+      y: T.number,
+    })
+  ),
+  height: T.number, //distance from top of SVG file to the bottom line of element
   curve: T.func,
   type: T.oneOf([
     'normal',
     'small',
+    'bar',
   ]),
-  gradientId: T.string,
-}
-
-A_ChartArea.defaultProps = {
-  curve: () => {},
+  gradient: T.string,
 }
 
 export default A_ChartArea

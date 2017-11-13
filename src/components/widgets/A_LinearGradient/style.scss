@@ -1,0 +1,25 @@
+.a-linear-gradient {
+  &__area-gradient {
+    &.from {
+      stop-color: $chart-gradient-1;
+    }
+
+    &.to {
+      stop-color: $chart-gradient-2;
+    }
+  }
+
+  @for $i from 1 through length($bar-colors-list-from) {
+    &__bar-chart-#{$i} {
+      &.from {
+        stop-color: nth($bar-colors-list-from, $i);
+      }
+    }
+
+    &__bar-chart-#{$i} {
+      &.to {
+        stop-color: nth($bar-colors-list-to, $i);
+      }
+    }
+  }
+}

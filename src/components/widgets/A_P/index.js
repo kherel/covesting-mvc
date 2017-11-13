@@ -11,6 +11,8 @@ A_P.propTypes = {
     'description', //*** 12/19 section-subtitle
     'subtitle', //*** 12/18 section-subtitle
   ]),
+  children: T.any,
+  mx: T.string,
 }
 
 export default A_P

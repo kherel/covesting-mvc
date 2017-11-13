@@ -8,3 +8,8 @@ export const _date = (date, locale = 'en') => {
 export const _isDateValid = date => {
   return moment(date).isValid()
 }
+
+export const formatDate = (date, format, locale = 'en') => {
+  moment.locale(locale)
+  return moment(date).format(format)
+}

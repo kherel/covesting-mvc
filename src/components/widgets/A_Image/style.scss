@@ -1,0 +1,41 @@
+.a-image {
+  &__root {
+
+  }
+
+  &__img {
+
+    display: block;
+    object-fit: cover;
+
+    &_type {
+      &_icon {
+
+      }
+    }
+
+    &_on-click {
+      &_true {
+        cursor: pointer;
+      }
+    }
+
+    &_object-fit {
+      &_contain {
+        object-fit: contain;
+      }
+      &_cover-hidden {
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+
+    &.real-size {
+      width: auto;
+      height: auto;
+    }
+    &.rounded {
+      border-radius: 50%;
+    }
+  }
+}

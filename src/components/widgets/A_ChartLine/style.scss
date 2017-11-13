@@ -1,7 +1,6 @@
 .a-chart-line {
   fill: none;
 
-
   &_type {
     &_normal {
       stroke-width: 2;
@@ -14,12 +13,22 @@
     &_small {
       stroke-width: 1;
       stroke: $chart-line;
+      animation: dash 2s 1s ease-out normal forwards;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
     }
 
     &_grid {
       stroke-width: 0.6;
-      stroke: #e7ebef;//Temp color to avoid eye breaking
+      stroke: #f5f7f8;
     }
+
+    &_border {
+      stroke-width: 2;
+      stroke: #cccccc;
+    }
+
+
   }
 }
 

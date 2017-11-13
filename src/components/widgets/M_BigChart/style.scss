@@ -1,0 +1,7 @@
+.m-big-chart {
+  //To override normalize`s IE fix
+  &:not(:root) {
+    overflow: visible;
+  }
+}
+

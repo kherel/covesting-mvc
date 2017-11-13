@@ -165,3 +165,16 @@ export function cleanNumber(value, afterComma) {
   }
   return res
 }
+
+export const formatNumber = (number, format, afterComma = 0) => {
+  switch (format) {
+    case 'normal':
+      return number
+
+    case 'kilo':
+      return (number / 1000).toFixed(afterComma) + (number ? 'k' : '')
+
+    default:
+      return number
+  }
+}
