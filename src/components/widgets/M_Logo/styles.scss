@@ -1,0 +1,11 @@
+.m-logo {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  &__svg-image {
+    width: inherit;
+    height: inherit;
+    display: block;
+  }
+}
