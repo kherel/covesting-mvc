@@ -1,4 +1,4 @@
-import { ERROR } from 'store/constants'
+import { ERROR } from 'constants'
 const Console = console
 
 export default () => next => action => {

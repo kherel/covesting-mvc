@@ -2,15 +2,15 @@ import React from 'react'
 import T from 'prop-types'
 import A_LinearGradient from 'A_LinearGradient'
 import M_OutlinedPlot from 'src/components/widgets/M_OutlinedPlot'
-import { areaGradient } from 'constants/svgConstants'
-import withScaledData from 'withScaledData'
+import { AREA_GRADIENT } from 'src/constants/svgConstants'
+import withScaledData from 'src/HOC/withScaledData'
 
 const M_SimpleChart = ({ height, width, scaledData }) => (
   <svg height={height} width={width}>
     <defs>
-      <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={areaGradient} />
+      <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={AREA_GRADIENT} />
     </defs>
-    <M_OutlinedPlot data={scaledData} type="small" height={height} gradient={areaGradient} />
+    <M_OutlinedPlot data={scaledData} type="small" height={height} gradient={AREA_GRADIENT} />
   </svg>
 )
 
