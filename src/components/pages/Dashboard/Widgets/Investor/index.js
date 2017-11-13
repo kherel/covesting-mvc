@@ -6,8 +6,8 @@ import { cssClassName } from 'utils'
 const cn = cssClassName('InvestorWidgets')
 
 
-const InvestorWidgets = ({mix}) => (
-  <div className={cn([mix])}>
+const InvestorWidgets = () => (
+  <div className={cn()}>
     <A_Card mx={cn('widget')}/>
     <A_Card mx={cn('widget')}/>
     <A_Card mx={cn('widget')}/>
@@ -19,7 +19,6 @@ const InvestorWidgets = ({mix}) => (
 )
 
 InvestorWidgets.propTypes = {
-  mix: T.string
 }
 
 export default InvestorWidgets
