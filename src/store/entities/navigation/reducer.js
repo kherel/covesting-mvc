@@ -3,6 +3,7 @@ import { SET, MENU, OPEN, CLOSE, TOGGLE, OPEN_ROUTE } from 'constants'
 const initNavigation = {
   page: undefined,
   isMenuOpened: false,
+  openRoute: [],
 }
 
 export default (navigation = initNavigation, { type, data }) => {
