@@ -1,0 +1,24 @@
+.dashboard {
+  display: flex;
+  height: 100%;
+  &__left {
+    flex: 0 0 298px;
+    background-color: #0084c9;
+  }
+  &__right {
+	position: relative;
+    flex: 0 0 1159px;//plus scrollbar width
+	max-width: 1159px;
+    background-color: #f2f5f8;
+  }
+  &__header {
+	height: 66px;
+	background-color: #fff;
+  }
+  &__widgets {
+	width: 100%;
+	height: 100%;
+	padding: 17px 0 21px 11px;
+	overflow-y: scroll;
+  }
+}
