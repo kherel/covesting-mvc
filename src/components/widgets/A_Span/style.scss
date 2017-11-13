@@ -1,0 +1,26 @@
+.a-span {
+  &_type {
+    &_menu-item {
+      font-size: 1.8rem;
+      letter-spacing: 0.3px;
+      color: $menu-link;
+
+      &.active {
+        font-weight: 600;
+        color: $menu-link-active;
+      }
+    }
+
+    &_badge {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 2.6rem;
+      height: 2.6rem;
+      color: $menu-link;
+      background-color: $button-background;
+
+    }
+  }
+}

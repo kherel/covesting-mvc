@@ -1,0 +1,36 @@
+.m-nav-item {
+  width: 100%;
+  box-sizing: border-box;
+  height: 5rem;
+  position: relative;
+  padding-left: 111px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  &_active {
+    &_true {
+      background-color: $menu-background-active;
+      cursor: default;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 0.7rem;
+        background-color: $button-background;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 8rem;
+  }
+
+
+}

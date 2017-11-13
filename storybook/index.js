@@ -11,10 +11,10 @@ import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
 import A_Card from 'A_Card'
 import M_BigChart from 'M_BigChart'
-import A_MenuIcon from 'A_MenuIcon'
 import A_Image from 'A_Image'
 import M_SimpleChart from 'M_SimpleChart'
 import M_BarChart from 'M_BarChart'
+import M_NavItem from 'M_MenuItem'
 
 const styleDecorator = storyFn => (
   <div
@@ -37,12 +37,11 @@ const whiteBackgroundDecorator = storyFn => (
   </div>
 )
 
-const blueBackgroundDecorator = storyFn => (
+const menuDecorator = storyFn => (
   <div
     style={{
       margin: 0,
-      width: 260,
-      padding: '20px',
+      width: 298,
       backgroundColor: '#0084c9',
     }}
   >
@@ -91,18 +90,14 @@ storiesOf('A_Svg', module)
     </div>
   ))
 
-storiesOf('A_MenuIcon', module)
-  .addDecorator(blueBackgroundDecorator)
-  .add('Menu icons', () => (
+storiesOf('M_MenuItems', module)
+  .addDecorator(menuDecorator)
+  .add('Menu items', () => (
     <div>
-      <A_MenuIcon type="dashboard" active />
-      <A_MenuIcon type="find-fund" />
-      <A_MenuIcon type="find-trader" />
-      <A_MenuIcon type="community" />
-      <A_MenuIcon type="messages" />
-      <A_MenuIcon type="reports" />
-      <A_MenuIcon type="wallet" />
-      <A_MenuIcon type="settings" />
+      <M_NavItem to="/dashboard" title="Dashboard" type="dashboard" />
+      <M_NavItem to="/dashboard" title="Find trader" type="find-trader" active />
+      <M_NavItem to="/dashboard" title="Find fund" type="find-fund" />
+      <M_NavItem to="/dashboard" title="Community" type="community" />
     </div>
   ))
 
@@ -119,7 +114,7 @@ storiesOf('A_Button', module)
       </A_Button>
     </div>
   ))
-  .addDecorator(blueBackgroundDecorator)
+  .addDecorator(menuDecorator)
   .add('Menu button', () => (
     <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
       Support
