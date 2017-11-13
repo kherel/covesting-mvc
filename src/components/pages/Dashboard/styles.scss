@@ -7,8 +7,8 @@
   }
   &__right {
 	position: relative;
-    flex: 0 0 1142px;
-	max-width: 1142px;
+    flex: 0 0 1159px;//plus scrollbar width
+	max-width: 1159px;
     background-color: #f2f5f8;
   }
   &__header {
@@ -18,6 +18,7 @@
   &__widgets {
 	width: 100%;
 	height: 100%;
-	padding: 17px 12px 21px 11px;
+	padding: 17px 0 21px 11px;
+	overflow-y: scroll;
   }
 }

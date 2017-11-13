@@ -14,7 +14,7 @@ class Widgets extends Component {
   _createWidgets = (type) => {
     switch(type) {
       case 'investor':
-        return <InvestorWidgets mix={cn('content')} />
+        return <InvestorWidgets />
       case 'trader':
         break
     }
