@@ -9,6 +9,9 @@ const A_Span = ({ children, type, mix, active }) => <span className={cn({ type }
 A_Span.propTypes = {
   type: T.oneOf([
     'table-big', //*** 15/18 black
+    'table-medium', //*** 14/17 black
+    'table-small', //*** 12/15 gray
+    'table-small-bold', //*** 12/15 black
     'bold', //*** semi-bold
     'menu-item', //*** 18px white
     'badge', //*** round badge, green background, white number 12px

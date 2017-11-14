@@ -3,13 +3,17 @@ import * as T from 'prop-types'
 import './style.scss'
 import { cssClassName } from 'utils'
 import A_Span from 'A_Span'
-import A_ColoredValue from 'A_ColoredValue'
+import A_ColoredPercentValue from 'src/components/widgets/A_ColoredPercentValue'
 const cn = cssClassName('M_TableEntry')
 
 const M_TableEntry = ({ mix, type, name, value, colored }) => (
   <A_Span mix={cn({ type }, [mix])} type="table-big">
     <span className={cn('name')}>{name}:</span>
-    {colored ? <A_ColoredValue value={value} percent /> : <A_Span type="bold">{value}</A_Span>}
+    {colored ? (
+      <A_ColoredPercentValue value={value} percent />
+    ) : (
+      <A_Span type="bold">{value}</A_Span>
+    )}
   </A_Span>
 )
 

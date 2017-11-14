@@ -18,6 +18,13 @@
       @extend #{$this}__bordered;
     }
 
+    &_border-blurred {
+      border-top: 1px solid $table-border-blurred;
+      &:last-of-type {
+        border-bottom: 1px solid $table-border-blurred;
+      }
+    }
+
     &_border-bg {
       @extend #{$this}__bordered;
       background-color: $table-background;

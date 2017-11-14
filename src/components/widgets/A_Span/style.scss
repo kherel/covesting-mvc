@@ -23,9 +23,27 @@
     }
 
     &_table-big {
-      font-size: 1.5rem;
-      line-height: 1.8rem;
+      font-size: 15px;
+      line-height: 18px;
       color: $table-text-black;
+    }
+
+    &_table-medium {
+      font-weight: 600;
+      font-size: 14px;
+      color: $basic-text;
+    }
+
+    &_table-small {
+      font-size: 12px;
+      line-height: 15px;
+      color: $basic-text;
+    }
+
+    &_table-small-bold {
+      font-size: 12px;
+      color: $table-text-black;
+      font-weight: 600;
     }
 
     &_feed-name {

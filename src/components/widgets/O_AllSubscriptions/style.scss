@@ -1,0 +1,61 @@
+.o-all-subscriptions {
+  padding: 16px 13px 21px 20px;
+
+
+  &__title {
+    margin-bottom: 13px;
+  }
+
+  &__table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 19px;
+  }
+
+  &__th-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    flex: 0 0 150px;
+  }
+
+  &__th-2 {
+    text-align: center;
+    flex: 0 0 120px;
+  }
+
+  &__th-3 {
+    text-align: center;
+    flex: 0 0 195px;
+  }
+
+  &__th-4 {
+    flex: 0 0 130px;
+    text-align: center;
+  }
+
+  &__th-5 {
+    margin-left: 30px;
+    flex: 0 0 94px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 14px;
+  }
+
+}

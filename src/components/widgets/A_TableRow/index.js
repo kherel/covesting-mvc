@@ -9,6 +9,7 @@ const A_TableRow = ({ type, children, mix }) => <div className={cn({ type }, [mi
 A_TableRow.propTypes = {
   type: T.oneOf([
     'border-clear', //*** top and bottom borders for each row
+    'border-blurred', //*** same as border-clear but with less opacity
     'border-bg', //*** top and bottom borders for each row
     'feed', //*** rgba(6, 81, 120, 0.5);
   ]),

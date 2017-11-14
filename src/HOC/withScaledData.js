@@ -69,6 +69,10 @@ export default type => WrappedComponent =>
       })
     }
 
+    onMouseLeave = () => {
+      this.setState({ posX: -1000, posY: -1000 })
+    }
+
     setRef = node => (this.node = node)
 
     render() {
@@ -82,6 +86,7 @@ export default type => WrappedComponent =>
           {...this.state}
           setRef={this.setRef}
           onMouseMove={this.onMouseMove}
+          onMouseLeave={this.onMouseLeave}
           axisXData={this.getAxisXData(data)}
           axisYData={this.getAxisYData(data)}
           rangeX={this.getRangeX(data)}

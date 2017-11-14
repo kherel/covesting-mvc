@@ -26,6 +26,7 @@ class O_BigChart extends Component {
     posX: T.number,
     posY: T.number,
     onMouseMove: T.func,
+    onMouseLeave: T.func,
 
     //Own props
     width: T.number,
@@ -49,12 +50,19 @@ class O_BigChart extends Component {
       axisYData,
       setRef,
       onMouseMove,
+      onMouseLeave,
       posX,
       posY,
     } = this.props
 
     return (
-      <svg ref={setRef} onMouseMove={onMouseMove} className={cn([mix])} {...{ height, width }}>
+      <svg
+        ref={setRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        className={cn([mix])}
+        {...{ height, width }}
+      >
         <defs>
           <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={AREA_GRADIENT} />
         </defs>

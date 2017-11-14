@@ -174,6 +174,9 @@ export const formatNumber = (number, format, afterComma = 0) => {
     case 'kilo':
       return (number / 1000).toFixed(afterComma) + (number ? 'k' : '')
 
+    case 'usd':
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+
     default:
       return number
   }

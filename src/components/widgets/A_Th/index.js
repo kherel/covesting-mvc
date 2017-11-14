@@ -4,7 +4,11 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_Th')
 
-const A_Th = ({ children, type, mix }) => <p className={cn({ type }, [mix])}>{children}</p>
+const A_Th = ({ children, type, mix, ...props }) => (
+  <p className={cn({ type }, [mix])} {...props}>
+    {children}
+  </p>
+)
 
 A_Th.propTypes = {
   type: T.oneOf([

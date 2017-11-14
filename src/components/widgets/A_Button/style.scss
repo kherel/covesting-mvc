@@ -16,7 +16,7 @@
   &__filled {
     color: $button-color;
     background-color: $button-background;
-    padding: 0.7rem 1rem 0.6rem;
+    padding: 0.7rem 2rem 0.6rem;
 
     &:hover {
       background-color: darken($button-background, 10%);
