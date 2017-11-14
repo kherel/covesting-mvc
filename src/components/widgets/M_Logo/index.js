@@ -10,7 +10,7 @@ const M_Logo = ({mix, type}) => (
   <Link className={cn([mix])} to="/">
     <A_Svg
       type={type}
-      mx={cn('svg-image')}
+      mix={cn('svg-image')}
     />
   </Link>
 )

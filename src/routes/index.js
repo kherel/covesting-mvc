@@ -1,7 +1,6 @@
 import { Route, IndexRoute } from 'react-router'
 import React from 'react'
 import MainLayout from './MainLayout'
-import Home from './Home'
 import Dashboard from './Dashboard'
 import Login from './Login'
 

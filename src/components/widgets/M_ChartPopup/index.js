@@ -49,12 +49,10 @@ const M_ChartPopup = ({ posX, posY, alignment, data: { date, increment }, shadow
 }
 
 M_ChartPopup.propTypes = {
-  data: T.arrayOf(
-    T.shape({
-      date: T.string,
-      increment: T.number,
-    })
-  ).isRequired,
+  data: T.shape({
+    date: T.string,
+    increment: T.number,
+  }).isRequired,
   posX: T.number.isRequired,
   posY: T.number.isRequired,
   shadowId: T.string.isRequired,

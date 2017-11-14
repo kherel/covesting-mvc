@@ -19,7 +19,7 @@ export default type => WrappedComponent =>
     state = {
       posX: -10000,
       posY: -10000,
-      popupData: { date: '', increment: '' },
+      popupData: { date: '', increment: 0 },
     }
 
     static displayName = `WithScaledData(${WrappedComponent.displayName ||
@@ -86,7 +86,7 @@ export default type => WrappedComponent =>
     }
 
     onMouseLeave = () => {
-      this.setState({ posX: -10000, posY: -10000, popupData: { date: '', increment: '' } })
+      this.setState({ posX: -10000, posY: -10000, popupData: { date: '', increment: 0 } })
     }
 
     setRef = node => (this.node = node)
