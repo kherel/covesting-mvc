@@ -17,10 +17,7 @@ const M_Logo = ({mix}) => (
 
 
 M_Logo.propTypes = {
-  mix: T.string, //BEM mixin from parent block, parent should control all positioning
-  type: T.oneOf([
-    'full', // adds "crypto intelligence" text to logo
-  ])
+  mix: T.string, //BEM mixin from parent block, parent should control all positioning and sizing
 }
 
 export default M_Logo
