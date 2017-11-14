@@ -6,15 +6,16 @@ import A_Card from 'A_Card'
 import A_H from 'A_H'
 import A_P from 'A_P'
 import O_BigChart from 'O_BigChart'
+import A_Button from 'A_Button'
 
 const chartData = [
   { x: '2017-01-14', y: 80 },
   { x: '2017-01-15', y: 60 },
-  { x: '2017-01-16', y: 90 },
+  { x: '2017-01-16', y: 100 },
   { x: '2017-01-17', y: 30 },
   { x: '2017-01-18', y: 40 },
   { x: '2017-01-19', y: 48 },
-  { x: '2017-01-20', y: 32 },
+  { x: '2017-01-20', y: 0 },
   { x: '2017-01-21', y: 90 },
 ]
 
@@ -28,9 +29,18 @@ const O_PortfolioResults = ({ mix }) => (
     <A_P type="subtitle" mix={cn('subtitle')}>
       Information displayed in points
     </A_P>
+    <A_Button mix={cn('button')} type="button-primary">
+      14 Jan - 23 Jan
+    </A_Button>
 
-    <O_BigChart mix={cn('chart')} data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
-
+    <O_BigChart
+      mix={cn('chart')}
+      data={chartData}
+      width={737}
+      height={193}
+      axisYMargin={27}
+      axisXMargin={25}
+    />
   </A_Card>
 )
 

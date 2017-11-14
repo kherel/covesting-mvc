@@ -1,0 +1,20 @@
+.m-chart-popup {
+  &__rect {
+    width: 95px;
+    height: 43px;
+    fill: $chart-popup-background;
+  }
+
+  &__colored-text {
+
+    &_positive {
+      &_true {
+        fill: $chart-popup-text-positive;
+      }
+
+      &_false {
+        fill: red;
+      }
+    }
+  }
+}

@@ -17,8 +17,9 @@ export default type => WrappedComponent =>
     }
 
     state = {
-      posX: -1000,
-      posY: -1000,
+      posX: -10000,
+      posY: -10000,
+      popupData: { date: '', increment: '' },
     }
 
     static displayName = `WithScaledData(${WrappedComponent.displayName ||
@@ -52,25 +53,40 @@ export default type => WrappedComponent =>
         y: this.scaleY(y),
       }))
 
+    //Prepare data for popup
+    getPopupData = data =>
+      data.map(({ x, y }, i) => {
+        const previousData = data[i - 1] || { y } //Hardcode previous value for first datapoint
+        const increment = y - previousData.y
+        return {
+          date: x,
+          x: this.scaleX(i),
+          increment,
+          posY: this.scaleY(y),
+        }
+      })
+
     onMouseMove = e => {
+      const { data } = this.props
       const { x } = this.node.getBoundingClientRect()
       const mousePos = e.clientX - x
 
-      const dataPoints = this.props.data.map((data, i) => this.scaleX(i))
+      const dataPoints = data.map((data, i) => this.scaleX(i))
       const posX = dataPoints.reduce(
         (prev, curr) => (Math.abs(curr - mousePos) < Math.abs(prev - mousePos) ? curr : prev)
       )
 
-      const posY = this.getDataPoints(this.props.data).find(({ x }) => x === posX).y
+      const { posY, date, increment } = this.getPopupData(data).find(({ x }) => x === posX)
 
       this.setState({
         posX,
         posY,
+        popupData: { date, increment },
       })
     }
 
     onMouseLeave = () => {
-      this.setState({ posX: -1000, posY: -1000 })
+      this.setState({ posX: -10000, posY: -10000, popupData: { date: '', increment: '' } })
     }
 
     setRef = node => (this.node = node)

@@ -11,5 +11,11 @@
       line-height: 1.6rem;
       fill: $bar-chart-text;
     }
+
+    &_chart-popup {
+      font-size: 12px;
+      line-height: 15;
+      fill: $chart-popup-text;
+    }
   }
 }
