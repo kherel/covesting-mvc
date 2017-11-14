@@ -1,0 +1,22 @@
+.m-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+
+  &__user-block {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__user-name {
+    margin-right: 20px;
+  }
+}

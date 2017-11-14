@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-// import * as T from "prop-types";
 import M_Logo from 'M_Logo'
 import Widgets from './Widgets'
 import './styles.scss'
 import { cssClassName } from 'utils'
+import M_Header from 'M_Header'
 const cn = cssClassName('Dashboard')
 
 class Dashboard extends Component {
@@ -19,7 +19,7 @@ class Dashboard extends Component {
         </div>
 
         <div className={cn('right')}>
-          <div className={cn('header')} />
+          <M_Header mix={cn('header')} />
           <Widgets mix={cn('widgets')} type="investor" />
           <div className={cn('widgets-container')} />
         </div>
