@@ -3,5 +3,8 @@
   &:not(:root) {
     overflow: visible;
   }
+
+  //To compensate axis margin
+  margin-left: 25px;
 }
 

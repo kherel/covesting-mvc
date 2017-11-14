@@ -6,11 +6,12 @@ import { cssClassName } from 'utils'
 import O_ProfitTable from 'O_ProfitTable'
 import O_LatestFeeds from 'O_LatestFeeds'
 import O_Balances from 'O_Balances'
+import O_PortfolioResults from 'O_PortfolioResults'
 const cn = cssClassName('InvestorWidgets')
 
 const InvestorWidgets = () => (
   <div className={cn()}>
-    <A_Card mix={cn('widget')} />
+    <O_PortfolioResults mix={cn('widget')} />
     <O_Balances mix={cn('widget')} />
     <A_Card mix={cn('widget')} />
     <div className={cn('inner-wrap')}>
