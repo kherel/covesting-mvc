@@ -1,0 +1,52 @@
+.a-span {
+  &_type {
+    &_menu-item {
+      font-size: 1.8rem;
+      letter-spacing: 0.3px;
+      color: $menu-link;
+
+      &.active {
+        font-weight: 600;
+        color: $menu-link-active;
+      }
+    }
+
+    &_badge {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 2.6rem;
+      height: 2.6rem;
+      color: $menu-link;
+      background-color: $button-background;
+    }
+
+    &_table-big {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      color: $table-text-black;
+    }
+
+    &_feed-name {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 0.5px;
+      color: $feed-name;
+    }
+
+    &_feed-message {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.4px;
+      color: $feed-message;
+    }
+
+    &_feed-time {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.4px;
+      color: $feed-time;
+    }
+  }
+}

@@ -4,8 +4,8 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_Svg')
 
-const A_Svg = ({ type, active, mx, ...props }) => (
-  <svg className={cn({type}, [mx, active && 'active'])} {...props}>
+const A_Svg = ({ type, active, mix, ...props }) => (
+  <svg className={cn({type}, [mix, active && 'active'])} {...props}>
     <use xlinkHref={`#icon-${type}`} />
   </svg>
 )
@@ -13,7 +13,7 @@ const A_Svg = ({ type, active, mx, ...props }) => (
 A_Svg.propTypes = {
   type: T.string.isRequired,
   active: T.bool,
-  mx: T.string,
+  mix: T.string,
 }
 
 export default A_Svg

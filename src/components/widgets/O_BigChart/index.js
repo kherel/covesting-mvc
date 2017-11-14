@@ -11,10 +11,10 @@ import M_OutlinedPlot from 'src/components/widgets/M_OutlinedPlot'
 import withScaledData from 'src/HOC/withScaledData'
 import A_Circle from 'A_Circle'
 
-const cn = cssClassName('M_BigChart')
+const cn = cssClassName('O_BigChart')
 
 @withScaledData()
-class M_BigChart extends Component {
+class O_BigChart extends Component {
   static propTypes = {
     //From HOC
     scaledData: T.array,
@@ -30,7 +30,7 @@ class M_BigChart extends Component {
     //Own props
     width: T.number,
     height: T.number,
-    mx: T.string,
+    mix: T.string,
     axisXMargin: T.number,
     axisYMargin: T.number,
   }
@@ -39,7 +39,7 @@ class M_BigChart extends Component {
     const {
       width,
       height,
-      mx,
+      mix,
       axisYMargin,
       axisXMargin,
       scaledData,
@@ -54,7 +54,7 @@ class M_BigChart extends Component {
     } = this.props
 
     return (
-      <svg ref={setRef} onMouseMove={onMouseMove} className={cn([mx])} {...{ height, width }}>
+      <svg ref={setRef} onMouseMove={onMouseMove} className={cn([mix])} {...{ height, width }}>
         <defs>
           <A_LinearGradient x1="0%" x2="0%" y1="0%" y2="100%" type={AREA_GRADIENT} />
         </defs>
@@ -69,4 +69,4 @@ class M_BigChart extends Component {
   }
 }
 
-export default M_BigChart
+export default O_BigChart

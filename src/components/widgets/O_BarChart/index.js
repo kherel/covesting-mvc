@@ -7,13 +7,13 @@ import { cssClassName } from 'src/utils/index'
 import './style.scss'
 import A_ChartLine from 'A_ChartLine'
 import A_SvgText from 'A_SvgText'
-const cn = cssClassName('M_BarChart')
+const cn = cssClassName('O_BarChart')
 
-const M_BarChart = ({ height, width, data, barWidth, margin, mx }) => {
+const O_BarChart = ({ height, width, data, barWidth, margin, mix }) => {
   const verticalPadding = 24
 
   return (
-    <svg className={cn([mx])} {...{ height, width }}>
+    <svg className={cn([mix])} {...{ height, width }}>
       <defs>
         {barChartGradients.map(gradient => <A_LinearGradient key={gradient} type={gradient} />)}
       </defs>
@@ -46,18 +46,18 @@ const M_BarChart = ({ height, width, data, barWidth, margin, mx }) => {
   )
 }
 
-M_BarChart.propTypes = {
+O_BarChart.propTypes = {
   height: T.number.isRequired,
   width: T.number.isRequired,
   data: T.array.isRequired,
   barWidth: T.number,
   margin: T.number,
-  mx: T.string,
+  mix: T.string,
 }
 
-M_BarChart.defaultProps = {
+O_BarChart.defaultProps = {
   barWidth: 32,
   margin: 10,
 }
 
-export default M_BarChart
+export default O_BarChart

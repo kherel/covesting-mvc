@@ -4,15 +4,16 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_Card')
 
-const A_Card = ({ children, type, mx, ...props }) => (
-  <section className={cn({ type }, [mx])} {...props}>{children}</section>
+const A_Card = ({ children, type, mix, ...props }) => (
+  <section className={cn({ type }, [mix])} {...props}>{children}</section>
 )
 
 A_Card.propTypes = {
   type: T.oneOf([
     'normal',
+
   ]),
-  mx: T.string,
+  mix: T.string,
   children: T.node.isRequired,
 }
 

@@ -21,12 +21,13 @@ $table-background: #fbfbfb;
 $table-heading-1: $basic-text;
 $table-heading-2: #9fa9ba;
 $table-heading-3: #707174;
-$table-text-1: #4d4d4d;
-$table-text-2: $basic-text;
-$table-text-positive-1: #76be87;
-$table-text-positive-2: #61d37b;
+$table-text-black: #4d4d4d;
+$table-text-gray: $basic-text;
+$table-text-positive-dim: #76be87;
+$table-text-positive-bright: #61d37b;
 $table-text-negative: #d0021b;
-$table-line: #979797;
+$table-border-clear: rgba(151, 151, 151, 0.59);
+$table-border-blurred: rgba(151, 151, 151, 0.33);
 $table-arrows: #cccfd4;
 
 $star-active: #f8e71c;
@@ -47,7 +48,7 @@ $chart-gradient-1: rgba(24, 231, 229, 0.61);
 $chart-gradient-2: rgba(11, 224, 221, 0.21);
 
 $feed-name: #37394c;
-$feed-status: #6da3c7;
+$feed-message: #6da3c7;
 $feed-time: #b2c0cb;
 
 $button-background: #0acac7;

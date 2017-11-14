@@ -4,7 +4,7 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_P')
 
-const A_P = ({ children, type, mx }) => <p className={cn({ type }, [mx])}>{children}</p>
+const A_P = ({ children, type, mix }) => <p className={cn({ type }, [mix])}>{children}</p>
 
 A_P.propTypes = {
   type: T.oneOf([
@@ -12,7 +12,7 @@ A_P.propTypes = {
     'subtitle', //*** 12/18 section-subtitle
   ]),
   children: T.any,
-  mx: T.string,
+  mix: T.string,
 }
 
 export default A_P

@@ -9,12 +9,13 @@ import A_P from 'A_P'
 import A_Th from 'A_Th'
 import A_Svg from 'A_Svg'
 import A_Button from 'A_Button'
-import A_Card from 'A_Card'
-import M_BigChart from 'M_BigChart'
-import A_MenuIcon from 'A_MenuIcon'
 import A_Image from 'A_Image'
+import A_ColoredValue from 'A_ColoredValue'
 import M_SimpleChart from 'M_SimpleChart'
-import M_BarChart from 'M_BarChart'
+import M_NavItem from 'M_MenuItem'
+import O_BarChart from 'O_BarChart'
+import O_BigChart from 'O_BigChart'
+import O_ProfitTable from 'O_ProfitTable'
 
 const styleDecorator = storyFn => (
   <div
@@ -37,12 +38,11 @@ const whiteBackgroundDecorator = storyFn => (
   </div>
 )
 
-const blueBackgroundDecorator = storyFn => (
+const menuDecorator = storyFn => (
   <div
     style={{
       margin: 0,
-      width: 260,
-      padding: '20px',
+      width: 298,
       backgroundColor: '#0084c9',
     }}
   >
@@ -73,6 +73,15 @@ storiesOf('A_Th', module)
   .add('Table header normal', () => <A_Th type="normal">Total weight</A_Th>)
   .add('Table header dark', () => <A_Th type="dark">Total weight</A_Th>)
 
+storiesOf('A_ColoredValue', module).add('Colored Value', () => (
+  <div>
+    <A_ColoredValue value={10} percent />
+    <A_ColoredValue value={-20} percent />
+    <A_ColoredValue value={40} />
+    <A_ColoredValue value={-155} />
+  </div>
+))
+
 storiesOf('A_Svg', module)
   .add('Stars', () => (
     <div>
@@ -91,18 +100,14 @@ storiesOf('A_Svg', module)
     </div>
   ))
 
-storiesOf('A_MenuIcon', module)
-  .addDecorator(blueBackgroundDecorator)
-  .add('Menu icons', () => (
+storiesOf('M_MenuItems', module)
+  .addDecorator(menuDecorator)
+  .add('Menu items', () => (
     <div>
-      <A_MenuIcon type="dashboard" active />
-      <A_MenuIcon type="find-fund" />
-      <A_MenuIcon type="find-trader" />
-      <A_MenuIcon type="community" />
-      <A_MenuIcon type="messages" />
-      <A_MenuIcon type="reports" />
-      <A_MenuIcon type="wallet" />
-      <A_MenuIcon type="settings" />
+      <M_NavItem to="/dashboard" title="Dashboard" type="dashboard" />
+      <M_NavItem to="/dashboard" title="Find trader" type="find-trader" active />
+      <M_NavItem to="/dashboard" title="Find fund" type="find-fund" />
+      <M_NavItem to="/dashboard" title="Community" type="community" />
     </div>
   ))
 
@@ -119,16 +124,14 @@ storiesOf('A_Button', module)
       </A_Button>
     </div>
   ))
-  .addDecorator(blueBackgroundDecorator)
+  .addDecorator(menuDecorator)
   .add('Menu button', () => (
     <A_Button onClick={action('clicked')} type="button-menu" btnType="button">
       Support
     </A_Button>
   ))
 
-storiesOf('A_Card', module).add('Card', () => (
-  <A_Card style={{ width: '300px', padding: '10px' }}>Hello, world!</A_Card>
-))
+storiesOf('O_ProfitTable', module).add('ProfitTable', () => <O_ProfitTable />)
 
 const chartData = [
   { x: '2017-01-14', y: 80 },
@@ -140,13 +143,13 @@ const chartData = [
 
 const barChartData = [40, 25, 20, 15]
 
-storiesOf('M_Chart', module)
+storiesOf('Charts', module)
   .addDecorator(whiteBackgroundDecorator)
-  .add('Big chart', () => (
-    <M_BigChart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
+  .add('O_BigChart', () => (
+    <O_BigChart data={chartData} width={737} height={193} axisYMargin={27} axisXMargin={25} />
   ))
-  .add('Small chart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
-  .add('Bar chart', () => <M_BarChart data={barChartData} width={400} height={158} />)
+  .add('M_SimpleChart', () => <M_SimpleChart data={chartData} width={112} height={44} />)
+  .add('O_BarChart', () => <O_BarChart data={barChartData} width={400} height={158} />)
 
 storiesOf('A_Image', module).add('Rounded image', () => (
   <A_Image

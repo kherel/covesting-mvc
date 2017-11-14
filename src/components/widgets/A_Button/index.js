@@ -12,7 +12,7 @@ const A_Btn = ({
   btnType,
   to,
   onClick,
-  mx,
+  mix,
   external,
   download,
   ...props
@@ -26,7 +26,7 @@ const A_Btn = ({
         return (
           <a
             href={to}
-            className={cn('link', { type }, [mx, 'link-external'])}
+            className={cn('link', { type }, [mix, 'link-external'])}
             download={download}
             target="_blank"
           >
@@ -35,7 +35,7 @@ const A_Btn = ({
         )
       } else {
         return (
-          <Link className={cn('link', { type }, [mx])} disabled={disabled} to={to} {...props}>
+          <Link className={cn('link', { type }, [mix])} disabled={disabled} to={to} {...props}>
             {children}
           </Link>
         )
@@ -47,7 +47,7 @@ const A_Btn = ({
     default:
       return (
         <button
-          className={cn('button', { type }, [disabled, mx])}
+          className={cn('button', { type }, [disabled, mix])}
           type={btnType}
           {...{ onClick, ...props }}
         >
@@ -65,6 +65,11 @@ A_Btn.propTypes = {
     'button-secondary', //transparent btn
     'button-menu', //menu transparent button
   ]).isRequired,
+  onClick: T.func,
+  children: T.any,
+  mix: T.string,
+  external: T.bool,
+  download: T.bool,
   btnType: T.oneOf([
     // button tag attribute
     'button',
