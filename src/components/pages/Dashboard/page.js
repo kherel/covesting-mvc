@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 // import * as T from "prop-types";
+import M_Logo from 'M_Logo'
 import Widgets from './Widgets'
 import './styles.scss'
 import { cssClassName } from 'utils'
@@ -9,7 +10,9 @@ class Dashboard extends Component {
   render() {
     return (
       <main className={cn()}>
-        <div className={cn('left')} />
+        <div className={cn('left')}>
+          <M_Logo mix={cn('logo')}/>
+        </div>
         <div className={cn('right')}>
           <div className={cn('header')} />
           <Widgets
