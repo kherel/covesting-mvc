@@ -4,12 +4,23 @@
   justify-content: space-between;
   padding: 0.9rem 0 0.9rem;
 
+  $this: &;
+
+  &__bordered {
+    border-top: 1px solid $table-border-clear;
+    &:last-of-type {
+      border-bottom: 1px solid $table-border-clear;
+    }
+  }
+
   &_type {
     &_border-clear {
-      border-top: 1px solid $table-border-clear;
-      &:last-of-type {
-        border-bottom: 1px solid $table-border-clear;
-      }
+      @extend #{$this}__bordered;
+    }
+
+    &_border-bg {
+      @extend #{$this}__bordered;
+      background-color: $table-background;
     }
 
     &_feed {

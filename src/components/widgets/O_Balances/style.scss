@@ -1,0 +1,31 @@
+.o-balances {
+  padding: 13px 20px 16px 15px;
+
+  &__title {
+    margin-bottom: 9px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__table-top {
+    margin-bottom: 25px;
+  }
+
+  &__table-bottom {
+    margin-bottom: 31px;
+  }
+
+  &__table-header {
+    margin-bottom: 14px;
+  }
+
+  &__table-row {
+    padding-right: 30px;
+  }
+
+  &__link {
+    position: relative;
+  }
+}

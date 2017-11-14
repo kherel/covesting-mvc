@@ -48,5 +48,9 @@
       letter-spacing: 0.4px;
       color: $feed-time;
     }
+
+    &_bold {
+      font-weight: 600;
+    }
   }
 }

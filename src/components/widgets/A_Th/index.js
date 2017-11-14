@@ -4,7 +4,7 @@ import './style.scss'
 import { cssClassName } from 'utils'
 const cn = cssClassName('A_Th')
 
-const A_Th = ({ children, type, mix }) => <th className={cn({ type }, [mix])}>{children}</th>
+const A_Th = ({ children, type, mix }) => <p className={cn({ type }, [mix])}>{children}</p>
 
 A_Th.propTypes = {
   type: T.oneOf([
@@ -14,6 +14,10 @@ A_Th.propTypes = {
   ]),
   mix: T.string,
   children: T.any,
+}
+
+A_Th.defaultProps = {
+  type: 'normal',
 }
 
 export default A_Th

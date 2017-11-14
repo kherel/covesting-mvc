@@ -16,15 +16,15 @@ const O_ProfitTable = ({ mix }) => (
 
 
     <A_TableRow type="border-clear">
-      <M_TableEntry name="Day" value={9} />
-      <M_TableEntry name="7 days" value={-5} />
-      <M_TableEntry name="Month" value={15} />
+      <M_TableEntry colored name="Day" value={9} />
+      <M_TableEntry colored name="7 days" value={-5} />
+      <M_TableEntry colored name="Month" value={15} />
     </A_TableRow>
 
     <A_TableRow type="border-clear">
-      <M_TableEntry name="3 mo" value={9} />
-      <M_TableEntry name="Year" value={15} />
-      <M_TableEntry name="All" value={55} />
+      <M_TableEntry colored name="3 mo" value={9} />
+      <M_TableEntry colored name="Year" value={15} />
+      <M_TableEntry colored name="All" value={55} />
     </A_TableRow>
   </A_Card>
 )

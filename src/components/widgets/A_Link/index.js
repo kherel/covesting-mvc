@@ -25,7 +25,9 @@ const A_Link = ({ children, type, disabled, external, download, to, mix, ...prop
   return _link
 }
 A_Link.propTypes = {
-  type: T.oneOf(['card']),
+  type: T.oneOf([
+    'card', //*** Need to set position: relative to mix because now mix doesn't overwrite element's style
+  ]),
   external: T.bool, // for external links
   download: T.bool,
   disabled: T.bool,
