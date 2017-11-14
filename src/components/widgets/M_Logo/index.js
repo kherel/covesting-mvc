@@ -6,10 +6,10 @@ import {cssClassName} from 'utils'
 const cn = cssClassName('M_Logo')
 import {Link} from 'react-router'
 
-const M_Logo = ({mix}) => (
+const M_Logo = ({mix, type}) => (
   <Link className={cn([mix])} to="/">
     <A_Svg
-      type='logo-white'
+      type={type}
       mx={cn('svg-image')}
     />
   </Link>
@@ -17,10 +17,11 @@ const M_Logo = ({mix}) => (
 
 
 M_Logo.propTypes = {
-  mix: T.string, //BEM mixin from parent block, parent should control all positioning
+  mix: T.string, //BEM mixin from parent block, parent should control all positioning and sizing
   type: T.oneOf([
-    'full', // adds "crypto intelligence" text to logo
-  ])
+    'logo-white', // white logo
+    'logo-blue' // blue logo
+  ]).isRequired,
 }
 
 export default M_Logo

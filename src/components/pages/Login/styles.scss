@@ -1,0 +1,40 @@
+.login {
+  display: flex;
+  height: 100%;
+
+  &__left {
+    flex: 0 0 582px;
+    display: flex;
+    flex-direction: column;
+    padding: 21px 34px 33px 41px;
+    background-color: #fff;
+  }
+
+  &__logo {
+    width: 171px;
+    height: 46px;
+  }
+
+  &__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 858px;
+    max-width: 858px;
+    background-image: url("/img/bg/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__header {
+    height: 66px;
+    //background-color: #fff;
+  }
+
+  &__widgets {
+    flex-grow: 1;
+    padding: 17px 0 21px 11px;
+    overflow-y: scroll;
+    max-height: 100%;
+  }
+}
