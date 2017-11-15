@@ -2,6 +2,7 @@ import path from 'path'
 import webpack from 'webpack'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
+import Dotenv from 'dotenv-webpack'
 
 process.noDeprecation = true
 // const sourcePath = path.join(__dirname, './src')
@@ -21,6 +22,7 @@ export default {
       },
       prefix: "icon-",
     }),
+    new Dotenv(),
   ],
   devtool: 'cheap-module-eval-source-map',
   entry: [

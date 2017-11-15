@@ -1,11 +1,12 @@
 /* eslint-disable */
-
 import path from 'path'
 import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import ProgressBarPlugin from 'progress-bar-webpack-plugin'
 import SvgStore from 'webpack-svgstore-plugin'
+import Dotenv from 'dotenv-webpack'
+
 const autoprefixer = require('autoprefixer')
 const sourcePath = path.join(__dirname, './src')
 
@@ -129,6 +130,7 @@ export default {
       },
       prefix: "icon-"
     })
+    new Dotenv(),
     // new BundleAnalyzerPlugin({
     //   analyzerMode: 'static'
     // })

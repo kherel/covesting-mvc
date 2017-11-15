@@ -1,4 +1,5 @@
 const path = require('path')
+require("babel-polyfill")
 require('app-module-path').addPath(path.join(process.cwd(), 'src'))
 require('./globals')
 const compression = require('compression')
