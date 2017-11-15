@@ -4,6 +4,7 @@ const initNavigation = {
   page: undefined,
   isMenuOpened: false,
   openRoute: [],
+  role: 'investor'
 }
 
 export default (navigation = initNavigation, { type, data }) => {

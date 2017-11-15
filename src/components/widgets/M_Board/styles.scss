@@ -1,0 +1,22 @@
+.m-board{
+  position: relative;
+  flex-direction: column;
+  background-color: #f2f5f8;
+  padding-top: 83px;
+  flex: 0 0 1159px;//plus scrollbar width
+  max-width: 1159px;
+  display: flex;
+
+  &__header {
+    height: 66px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #f2f5f8;
+  }
+
+  &__inner{
+    padding-left: 11px;
+  }
+}

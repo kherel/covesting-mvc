@@ -4,4 +4,35 @@
   width: 1457px;//plus scrollbar width
   margin: 0 auto;
   overflow: hidden;
+
+  &__inner{
+    display: flex;
+    height: 100%;
+  }
+
+  &__nav {
+    flex: 0 0 298px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 21px;
+    background-color: #0084c9;
+  }
+
+  &__logo {
+    width: 166px;
+    height: 46px;
+    margin: 0 auto;
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding: 19px 0 16px;
+    background-color: #0574ae;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+    color: #e3e5ea;
+  }
+
 }

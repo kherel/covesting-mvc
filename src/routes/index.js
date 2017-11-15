@@ -4,11 +4,16 @@ import MainLayout from './MainLayout'
 import Dashboard from './Dashboard'
 import Login from './Login'
 
-const getRoutes = () => {
+const getRoutes = (store) => {
+  const state = store.getState()
+  const {navigation:{role}} = state
+
   return (
-    <Route path="/" component={MainLayout} prepareData={MainLayout.prepareData}>
-      <IndexRoute component={Dashboard} />
-      <Route path="/login" component={Login} />
+    <Route path="/" >
+      <IndexRoute component={Login} />
+      <Route component={MainLayout} >
+        <Route path="/dashboard" component={Dashboard} role={role}/>
+      </Route>
     </Route>
   )
 }

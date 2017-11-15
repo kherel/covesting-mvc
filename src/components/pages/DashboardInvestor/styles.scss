@@ -1,0 +1,48 @@
+.dashboard-investor {
+  $this: &;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  &__widgets {
+    flex-grow: 1;
+    padding: 17px 0 21px 11px;
+    overflow-y: scroll;
+    max-height: 100%;
+  }
+
+  &__widget {
+    flex-shrink: 0;
+    flex-grow: 0;
+    &:nth-child(1) {
+      margin-right: 12px;
+      margin-bottom: 9px;
+      width: 798px;
+      height: 335px;
+    }
+    &:nth-child(2) {
+      width: 309px;
+      height: 335px;
+    }
+    &:nth-child(3) {
+      width: 798px;
+      height: 357px;
+      margin-right: 12px;
+    }
+  }
+
+  &__inner-wrap {
+    #{$this}__widget {
+      &:nth-child(1) {
+        width: 309px;
+        height: 127px;
+        margin-right: 0;
+        margin-bottom: 13px;
+      }
+      &:nth-child(2) {
+        width: 309px;
+        height: 217px;
+      }
+    }
+  }
+}

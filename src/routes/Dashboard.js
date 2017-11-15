@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
-import Dashboard from 'Dashboard/container'
+import DashboardInvestor from 'DashboardInvestor/container'
+import DashboardTrader from 'DashboardTrader/container'
+import history from 'history'
 
 class DashboardRoute extends Component {
   render() {
-    return <Dashboard />
+    const { route: { role } } = this.props
+
+    switch (role) {
+      case 'trader':
+        return <DashboardTrader />
+      case 'investor':
+        return <DashboardInvestor />
+    }
+
+    history.push('/')
   }
 }
 
