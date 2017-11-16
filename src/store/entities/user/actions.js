@@ -1,62 +1,67 @@
 import authProvider from "utils/auth_provider"
 import request from 'superagent'
 
-const url = process.env.BACKEND_URL
+const URL = process.env.BACKEND_URL
 
-export const createUser = async () => {
+export const createUser = async (options) => {
+  const { email, password } = options
+
   const res = await request
-    .post(`${url}/users`)
+    .post(`${URL}/users`)
     .set('Accept', 'application/json')
-    // .send({ email: 'test@test.com', password: 'password' })
-    .send({ email: 'niten2@yandex.ru', password: 'password' })
+    .send({ email, password })
 
   console.log(res.body)
 }
 
 export const showUser = async () => {
   const token = authProvider.fetchToken()
+
   const res = await request
-    .get(`${url}/users`)
+    .get(`${URL}/users`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    // .send({ email: 'test@test.com', password: 'password' })
-    .send({ email: 'niten2@yandex.ru', password: 'password' })
 
   console.log(res.body)
 }
 
-export const updateUser = async () => {
+export const updateUser = async (options) => {
+  const { email, password } = options
+
   const token = authProvider.fetchToken()
   const res = await request
-    .put(`${url}/users`)
+    .put(`${URL}/users`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    .send({ email: 'test2@test.com', password: 'new password' })
+    .send({ email, password })
 
   console.log(res.body)
 }
 
 export const deleteUser = async () => {
   const token = authProvider.fetchToken()
+
   const res = await request
-    .delete(`${url}/users`)
+    .delete(`${URL}/users`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
 
   console.log(res.body)
 }
 
-export const createToken = async () => {
+export const createToken = async (options) => {
+  const { email, password } = options
+
   const res = await request
-    .put(`${url}/auth/token`)
+    .put(`${URL}/auth/token`)
     .set('Accept', 'application/json')
-    // .send({ email: 'test@test.com', password: 'password' })
-    .send({ email: 'niten2@yandex.ru', password: 'password' })
+    .send({ email, password })
 
   const token = res.body.token
 
   if (token) {
     authProvider.saveToken(token)
+
     console.log(token)
     console.log("token save in localStorage")
   } else {
@@ -71,26 +76,41 @@ export const removeToken = async () => {
   console.log("removeToken success")
 }
 
-export const sendConfirmEmail = async () => {
+export const sendConfirmEmail = async (options) => {
+  let { email } = options
   const token = authProvider.fetchToken()
+
   const res = await request
-    .post(`${url}/auth/send_confirm`)
+    .post(`${URL}/auth/send_confirm`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    // .send({ email: 'test@test.com' })
-    .send({ email: 'niten2@yandex.ru' })
+    .send({ email })
 
   console.log(res.body)
 }
 
-export const sendResetPassword = async () => {
+export const sendResetPassword = async (options) => {
+  const { email } = options
+
   const token = authProvider.fetchToken()
   const res = await request
-    .post(`${url}/auth/send_reset_password`)
+    .post(`${URL}/auth/send_reset_password`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    // .send({ email: 'test@test.com' })
-    .send({ email: 'niten2@yandex.ru' })
+    .send({ email })
+
+  console.log(res.body)
+}
+
+export const resetPassword = async (options) => {
+  const { code, new_password } = options
+  const token = authProvider.fetchToken()
+
+  const res = await request
+    .post(`${URL}/auth/reset_password`)
+    .set('Accept', 'application/json')
+    .set('Authorization', token)
+    .send({ code, new_password })
 
   console.log(res.body)
 }
