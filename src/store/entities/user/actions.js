@@ -89,6 +89,19 @@ export const sendConfirmEmail = async (options) => {
   console.log(res.body)
 }
 
+export const confirmEmail = async (options) => {
+  const { code } = options
+  const token = authProvider.fetchToken()
+
+  const res = await request
+    .post(`${URL}/auth/confirm`)
+    .set('Accept', 'application/json')
+    .set('Authorization', token)
+    .send({ code })
+
+  console.log(res.body)
+}
+
 export const sendResetPassword = async (options) => {
   const { email } = options
 
