@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
-import { createUser } from "../store/entities/user/actions"
+
+import {
+  createUser,
+  showUser,
+  updateUser,
+  deleteUser,
+  createToken,
+  sendConfirmEmail,
+  sendResetPassword,
+} from "../store/entities/user/actions"
 
 export default class Example extends Component {
   render() {
@@ -9,14 +18,18 @@ export default class Example extends Component {
         <br />
         <button onClick={createUser}> createUser </button>
         <br />
-        <button> showUser </button>
+        <button onClick={showUser}> showUser </button>
         <br />
-        <button> updateUser </button>
+        <button onClick={updateUser}> updateUser </button>
         <br />
-        <button> deleteUser </button>
+        <button onClick={deleteUser}> deleteUser </button>
         <br />
-
-
+        <button onClick={createToken}> createToken </button>
+        <br />
+        <button onClick={sendConfirmEmail}> sendConfirmEmail </button>
+        <br />
+        <button onClick={sendResetPassword}> sendResetPassword </button>
+        <br />
 
       </div>
     )
