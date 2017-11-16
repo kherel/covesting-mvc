@@ -7,7 +7,8 @@ export const createUser = async () => {
   const res = await request
     .post(`${url}/users`)
     .set('Accept', 'application/json')
-    .send({ email: 'test@test.com', password: 'password' })
+    // .send({ email: 'test@test.com', password: 'password' })
+    .send({ email: 'niten2@yandex.ru', password: 'password' })
 
   console.log(res.body)
 }
@@ -18,7 +19,8 @@ export const showUser = async () => {
     .get(`${url}/users`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    .send({ email: 'test@test.com', password: 'password' })
+    // .send({ email: 'test@test.com', password: 'password' })
+    .send({ email: 'niten2@yandex.ru', password: 'password' })
 
   console.log(res.body)
 }
@@ -48,7 +50,8 @@ export const createToken = async () => {
   const res = await request
     .put(`${url}/auth/token`)
     .set('Accept', 'application/json')
-    .send({ email: 'test@test.com', password: 'password' })
+    // .send({ email: 'test@test.com', password: 'password' })
+    .send({ email: 'niten2@yandex.ru', password: 'password' })
 
   const token = res.body.token
 
@@ -74,7 +77,8 @@ export const sendConfirmEmail = async () => {
     .post(`${url}/auth/send_confirm`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    .send({ email: 'test@test.com' })
+    // .send({ email: 'test@test.com' })
+    .send({ email: 'niten2@yandex.ru' })
 
   console.log(res.body)
 }
@@ -85,7 +89,8 @@ export const sendResetPassword = async () => {
     .post(`${url}/auth/send_reset_password`)
     .set('Accept', 'application/json')
     .set('Authorization', token)
-    .send({ email: 'test@test.com' })
+    // .send({ email: 'test@test.com' })
+    .send({ email: 'niten2@yandex.ru' })
 
   console.log(res.body)
 }
